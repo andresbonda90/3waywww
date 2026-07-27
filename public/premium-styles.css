@@ -1,0 +1,104 @@
+/* PREMIUM STYLES FOR HOME & NEWS */
+
+/* 1. Global Typography and Spacing */
+body, .elementor-text-editor, p {
+    color: #4a4a4a !important;
+    line-height: 1.7 !important;
+    font-family: 'Open Sans', 'Roboto', 'Inter', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6, .elementor-heading-title {
+    color: #1a1a1a !important;
+    margin-bottom: 20px !important;
+    letter-spacing: -0.5px !important;
+    font-weight: 700 !important;
+}
+
+/* 2. Premium News Cards (.elementor-post__card) */
+.elementor-post__card {
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    border: 1px solid #eaeaea !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+}
+
+.elementor-post__card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+    border-color: #d0d0d0 !important;
+}
+
+.elementor-post__thumbnail {
+    overflow: hidden !important;
+    border-top-left-radius: 12px !important;
+    border-top-right-radius: 12px !important;
+    height: 220px !important;
+}
+
+.elementor-post__thumbnail img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.5s ease !important;
+}
+
+.elementor-post__card:hover .elementor-post__thumbnail img {
+    transform: scale(1.08) !important;
+}
+
+.elementor-post__text {
+    padding: 24px !important;
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.elementor-post__title {
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px !important;
+    line-height: 1.4 !important;
+}
+
+.elementor-post__title a {
+    color: #0073aa !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+}
+
+.elementor-post__title a:hover {
+    color: #005580 !important;
+}
+
+.elementor-post__excerpt p {
+    font-size: 15px !important;
+    color: #555555 !important;
+    margin-bottom: 20px !important;
+    line-height: 1.6 !important;
+}
+
+.elementor-post__read-more {
+    font-weight: 600 !important;
+    color: #0073aa !important;
+    text-transform: uppercase !important;
+    font-size: 13px !important;
+    letter-spacing: 1px !important;
+    margin-top: auto !important;
+    display: inline-block !important;
+    transition: all 0.2s ease !important;
+}
+
+.elementor-post__read-more:hover {
+    color: #000000 !important;
+}
+
+/* 3. Tidy up spacing globally */
+.elementor-section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+}
