@@ -1,18 +1,9 @@
 /* PREMIUM STYLES FOR HOME & NEWS */
 
 /* 1. Global Typography and Spacing */
-body, .elementor-text-editor, p {
-    color: #4a4a4a !important;
-    line-height: 1.7 !important;
-    font-family: 'Open Sans', 'Roboto', 'Inter', sans-serif !important;
-}
 
-h1, h2, h3, h4, h5, h6, .elementor-heading-title {
-    color: #1a1a1a !important;
-    margin-bottom: 20px !important;
-    letter-spacing: -0.5px !important;
-    font-weight: 700 !important;
-}
+
+
 
 /* 2. Premium News Cards (.elementor-post__card) */
 .elementor-post__card {
@@ -78,7 +69,7 @@ h1, h2, h3, h4, h5, h6, .elementor-heading-title {
 .elementor-post__excerpt p {
     font-size: 15px !important;
     color: #555555 !important;
-    margin-bottom: 20px !important;
+    
     line-height: 1.6 !important;
 }
 
@@ -97,8 +88,3 @@ h1, h2, h3, h4, h5, h6, .elementor-heading-title {
     color: #000000 !important;
 }
 
-/* 3. Tidy up spacing globally */
-.elementor-section {
-    padding-top: 40px !important;
-    padding-bottom: 40px !important;
-}
