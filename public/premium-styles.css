@@ -48,6 +48,7 @@ body, .elementor-text-editor, p {
 }
 
 .elementor-post__thumbnail img {
+    opacity: 1 !important; display: block !important; visibility: visible !important; max-width: 100% !important;
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
@@ -56,6 +57,7 @@ body, .elementor-text-editor, p {
 
 /* Image zoom on card hover */
 .elementor-post__card:hover .elementor-post__thumbnail img {
+    opacity: 1 !important; display: block !important; visibility: visible !important; max-width: 100% !important;
     transform: scale(1.06) !important;
 }
 
@@ -110,18 +112,9 @@ body, .elementor-text-editor, p {
     text-decoration: none !important;
 }
 
-/* Add custom arrow */
-.elementor-post__read-more::after {
-    content: "→" !important;
-    margin-left: 8px !important;
-    font-size: 16px !important;
-    transition: transform 0.3s ease !important;
-}
+
 
 .elementor-post__card:hover .elementor-post__read-more {
     color: #0073aa !important;
 }
 
-.elementor-post__card:hover .elementor-post__read-more::after {
-    transform: translateX(6px) !important;
-}
