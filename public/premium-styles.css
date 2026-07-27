@@ -1,90 +1,127 @@
-/* PREMIUM STYLES FOR HOME & NEWS */
+/* PREMIUM STYLES FOR HOME & NEWS - MAGAZINE EDITION */
 
-/* 1. Global Typography and Spacing */
+body, .elementor-text-editor, p {
+    color: #4a4a4a !important;
+    line-height: 1.7 !important;
+    font-family: 'Open Sans', 'Roboto', 'Inter', sans-serif !important;
+}
 
-
-
-
-/* 2. Premium News Cards (.elementor-post__card) */
+/* 2. Premium News Cards (.elementor-post__card) - Magazine Aesthetic */
 .elementor-post__card {
-    background: #ffffff !important;
-    border-radius: 12px !important;
-    border: 1px solid #eaeaea !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
-    overflow: hidden !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
     display: flex !important;
     flex-direction: column !important;
     height: 100% !important;
+    overflow: visible !important;
 }
 
-.elementor-post__card:hover {
-    transform: translateY(-8px) !important;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
-    border-color: #d0d0d0 !important;
-}
-
+/* Thumbnail wrapper */
 .elementor-post__thumbnail {
+    position: relative !important;
     overflow: hidden !important;
-    border-top-left-radius: 12px !important;
-    border-top-right-radius: 12px !important;
-    height: 220px !important;
+    border-radius: 16px !important;
+    aspect-ratio: 16/9 !important;
+    height: auto !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08) !important;
+}
+
+/* Add a floating "NOVEDAD" badge via pseudo-element */
+.elementor-post__thumbnail::after {
+    content: "NOVEDAD" !important;
+    position: absolute !important;
+    top: 15px !important;
+    left: 15px !important;
+    background: linear-gradient(135deg, #0073aa, #005580) !important;
+    color: white !important;
+    padding: 6px 14px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    border-radius: 20px !important;
+    z-index: 10 !important;
+    box-shadow: 0 4px 10px rgba(0,115,170,0.3) !important;
+    pointer-events: none !important;
 }
 
 .elementor-post__thumbnail img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    transition: transform 0.5s ease !important;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
+/* Image zoom on card hover */
 .elementor-post__card:hover .elementor-post__thumbnail img {
-    transform: scale(1.08) !important;
+    transform: scale(1.06) !important;
 }
 
+/* Text area styling */
 .elementor-post__text {
-    padding: 24px !important;
+    padding: 20px 0 !important;
     flex-grow: 1 !important;
     display: flex !important;
     flex-direction: column !important;
+    background: transparent !important;
 }
 
 .elementor-post__title {
-    font-size: 1.25rem !important;
-    font-weight: 700 !important;
+    font-size: 1.4rem !important;
+    font-weight: 800 !important;
     margin-bottom: 12px !important;
-    line-height: 1.4 !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.5px !important;
 }
 
 .elementor-post__title a {
-    color: #0073aa !important;
+    color: #11151c !important;
     text-decoration: none !important;
-    transition: color 0.2s ease !important;
+    transition: all 0.3s ease !important;
+    display: inline-block !important;
 }
 
-.elementor-post__title a:hover {
-    color: #005580 !important;
+/* Title slides slightly on hover */
+.elementor-post__card:hover .elementor-post__title a {
+    color: #0073aa !important;
+    transform: translateX(4px) !important;
 }
 
 .elementor-post__excerpt p {
     font-size: 15px !important;
-    color: #555555 !important;
-    
+    color: #666666 !important;
+    margin-bottom: 25px !important;
     line-height: 1.6 !important;
 }
 
+/* Modern minimalist Read More button */
 .elementor-post__read-more {
-    font-weight: 600 !important;
-    color: #0073aa !important;
+    font-weight: 700 !important;
+    color: #11151c !important;
     text-transform: uppercase !important;
-    font-size: 13px !important;
-    letter-spacing: 1px !important;
+    font-size: 12px !important;
+    letter-spacing: 1.5px !important;
     margin-top: auto !important;
-    display: inline-block !important;
-    transition: all 0.2s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
 }
 
-.elementor-post__read-more:hover {
-    color: #000000 !important;
+/* Add custom arrow */
+.elementor-post__read-more::after {
+    content: "→" !important;
+    margin-left: 8px !important;
+    font-size: 16px !important;
+    transition: transform 0.3s ease !important;
 }
 
+.elementor-post__card:hover .elementor-post__read-more {
+    color: #0073aa !important;
+}
+
+.elementor-post__card:hover .elementor-post__read-more::after {
+    transform: translateX(6px) !important;
+}
