@@ -1,0 +1,10 @@
+Sitemap: https://3way.com.ar/sitemap.xml
+Sitemap: https://3way.com.ar/news-sitemap.xml
+# START YOAST BLOCK
+# ---------------------------
+User-agent: *
+Disallow:
+
+Sitemap: https://3way.com.ar/sitemap_index.xml
+# ---------------------------
+# END YOAST BLOCK

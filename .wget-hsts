@@ -1,0 +1,5 @@
+# HSTS 1.0 Known Hosts database for GNU Wget.
+# Edit at your own risk.
+# <hostname>	<port>	<incl. subdomains>	<created>	<max-age>
+3way.com.ar	0	0	1785164728	31536000
+www.3way.com.ar	0	0	1785164728	31536000
