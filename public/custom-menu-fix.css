@@ -1,14 +1,14 @@
 /* ROBUST ELEMENTOR MENU REPLACEMENT */
 @media (min-width: 1025px) {
-    .elementor-nav-menu--main .elementor-item-has-children { position: relative !important; }
-    .elementor-nav-menu--main .elementor-item-has-children > .sub-menu {
+    .elementor-nav-menu--main .menu-item-has-children { position: relative !important; }
+    .elementor-nav-menu--main .menu-item-has-children > .sub-menu {
         display: block !important; position: absolute !important; top: 100% !important; left: 0 !important;
         min-width: 220px !important; background-color: #ffffff !important; box-shadow: 0 5px 20px rgba(0,0,0,0.15) !important;
         opacity: 0 !important; visibility: hidden !important; transform: translateY(15px) !important;
         transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) !important; pointer-events: none !important; z-index: 99999 !important;
         border-radius: 5px; padding: 10px 0 !important; margin: 0 !important; border: 1px solid #eee !important;
     }
-    .elementor-nav-menu--main .elementor-item-has-children:hover > .sub-menu {
+    .elementor-nav-menu--main .menu-item-has-children:hover > .sub-menu {
         opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important;
     }
     .elementor-nav-menu--main .sub-menu li { list-style: none !important; margin: 0 !important; padding: 0 !important; }
