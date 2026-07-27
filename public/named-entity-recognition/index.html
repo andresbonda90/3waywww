@@ -1383,7 +1383,7 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 //# sourceURL=elementor-frontend-js-before
 </script>
 <script id="elementor-frontend-js" src="/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=4.1.5"></script>
-<script id="smartmenus-js" src="/wp-content/plugins/elementor-pro/assets/lib/smartmenus/jquery.smartmenus.min.js?ver=1.2.1"></script>
+
 <script id="e-sticky-js" src="/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.35.1"></script>
 <script id="jetpack-stats-js-before">
 _stq = window._stq || [];
@@ -1423,51 +1423,7 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 //# sourceURL=/wp-includes/js/wp-emoji-loader.min.js
 </script>
 
-<style>
-/* CSS fallback for submenus just in case */
-.elementor-nav-menu--main .elementor-item-has-children:hover > .sub-menu {
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-</style>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var toggles = document.querySelectorAll('.elementor-menu-toggle');
-    toggles.forEach(function(toggle) {
-        toggle.addEventListener('click', function() {
-            var isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-            this.classList.toggle('elementor-active');
-            var nav = this.nextElementSibling;
-            if (nav && nav.classList.contains('elementor-nav-menu__container')) {
-                if (!isExpanded) {
-                    nav.style.display = 'block';
-                } else {
-                    nav.style.display = 'none';
-                }
-            }
-        });
-    });
-
-    var parentItems = document.querySelectorAll('.menu-item-has-children');
-    parentItems.forEach(function(item) {
-        var link = item.querySelector('a');
-        if (link) {
-            link.addEventListener('click', function(e) {
-                if (window.innerWidth <= 1024) {
-                    e.preventDefault();
-                    var submenu = item.querySelector('.sub-menu');
-                    if (submenu) {
-                        var isVisible = submenu.style.display === 'block';
-                        submenu.style.display = isVisible ? 'none' : 'block';
-                        submenu.style.opacity = '1';
-                        submenu.style.visibility = 'visible';
-                    }
-                }
-            });
-        }
-    });
-});
-</script>
+<link rel="stylesheet" href="/custom-menu-fix.css">
+<script src="/custom-menu-fix.js"></script>
 </body>
 </html>
