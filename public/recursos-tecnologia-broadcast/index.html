@@ -672,7 +672,91 @@ gtag("config", "GT-WBZNCSFL");
 											</div>
 										</div>
 									</div>
-					</div>
+								</div>
+
+<script>
+(function() {
+    function initRecursosHub() {
+        var RECURSOS_VIDEOS = [
+            { id: "qBVgiVG0M8Y", title: "Videus Auditor", duration: "0:16", thumb: "https://i0.wp.com/3way.com.ar/wp-content/uploads/2023/12/THUMNAIL-VIDEUS_1.jpg?w=800&ssl=1", desc: "Demostración de grabación y auditoría legal con Videus Auditor." },
+            { id: "X4kJ_veM5bw", title: "¿Qué es 3Way Solutions?", duration: "1:30", thumb: "https://i0.wp.com/3way.com.ar/wp-content/uploads/2025/09/Thumnail-Laminas-3way_1.jpg?w=800&ssl=1", desc: "Presentación general de nuestras soluciones de software broadcast." },
+            { id: "U1BouS7lIjI", title: "Catalog (ViDeus MAM)", duration: "1:15", thumb: "https://i0.wp.com/3way.com.ar/wp-content/uploads/2026/05/THUMNAIL-CATALOG.jpg?w=800&ssl=1", desc: "Gestión de activos multimediales (MAM) con Inteligencia Artificial." },
+            { id: "ksq4LwmmqRU", title: "Multiviewer Broadcast", duration: "1:05", thumb: "https://i0.wp.com/3way.com.ar/wp-content/uploads/2025/10/THUMNAIL-YOUTUBE-MULTIVIEWER.jpg?w=800&ssl=1", desc: "Visualización en mosaico dinámico de múltiples señales con alarmas." },
+            { id: "ZfN-xS5ytg8", title: "Centralización de Sistemas", duration: "1:20", thumb: "https://i0.wp.com/3way.com.ar/wp-content/uploads/2026/03/unnamed.png?w=800&ssl=1", desc: "Gestión unificada de múltiples servidores y equipamientos en red." },
+            { id: "iwPv6Ixhh3o", title: "Clipping de Radio y TV", duration: "1:40", thumb: "https://i0.wp.com/3way.com.ar/wp-content/uploads/2025/09/THUMNAIL-YOUTUBE-CLIPPING.jpg?w=800&ssl=1", desc: "Extracción y edición rápida de recortes de noticias." },
+            { id: "gOA3Zccgdlg", title: "Reconocimiento de Anuncios", duration: "1:10", thumb: "https://i0.wp.com/3way.com.ar/wp-content/uploads/2023/12/TITULO-TUTORIAL-FINGERPRINT-YOUTUBE.jpg?w=800&ssl=1", desc: "Auditoría de pauta comercial y fingerprint publicitario." },
+            { id: "ss58eSszsHU", title: "Reconocimiento Facial", duration: "1:25", thumb: "https://i0.wp.com/3way.com.ar/wp-content/uploads/2023/12/THUMNAIL-YOUTUBE-ROSTROS-01.jpg?w=800&ssl=1", desc: "Identificación automática de personas y famosos en televisión." },
+            { id: "ss58eSszsHU", title: "Reconocimiento Facial - Cómo funciona", duration: "1:45", thumb: "https://i0.wp.com/3way.com.ar/wp-content/uploads/2023/12/THUMNAIL-YOUTUBE-ROSTROS-01.jpg?w=800&ssl=1", desc: "Explicación detallada del módulo de análisis de visión artificial." },
+            { id: "wSfjz7uGjFc", title: "Decoder Amon", duration: "1:15", thumb: "https://i0.wp.com/3way.com.ar/wp-content/uploads/2023/12/THUMNAIL-AMON.jpg?w=800&ssl=1", desc: "Decodificación y procesamiento de señales profesionales." },
+            { id: "iHmS4FTmwN0", title: "Distribución de TV por Internet", duration: "1:35", thumb: "https://i0.wp.com/3way.com.ar/wp-content/uploads/2025/09/Thumnail-Distribucion-espanol.jpg?w=800&ssl=1", desc: "Transmisión y distribución OTT de canales de televisión." },
+            { id: "iwPv6Ixhh3o", title: "Cómo unir clips", duration: "0:50", thumb: "https://i0.wp.com/3way.com.ar/wp-content/uploads/2025/08/Portada-de-video-Unir-clips.jpg?w=800&ssl=1", desc: "Tutorial paso a paso sobre cómo concatenar múltiples recortes." },
+            { id: "qBVgiVG0M8Y", title: "Cómo crear usuarios y grupos", duration: "1:00", thumb: "https://i0.wp.com/3way.com.ar/wp-content/uploads/2025/08/Portada-de-video-Usuarios-y-grupos_FINGERPINT-HISTORIA-copia.jpg?w=800&ssl=1", desc: "Configuración de permisos y grupos de usuarios en la plataforma." }
+        ];
+
+        var playlistContainer = document.getElementById("recursosPlaylistItems");
+        var playerContainer = document.getElementById("recursosPlayerContainer");
+        var mainTitle = document.getElementById("recursosVideoTitle");
+        var mainDesc = document.getElementById("recursosVideoDesc");
+
+        if (!playlistContainer) return;
+        playlistContainer.innerHTML = "";
+
+        function loadVideo(index) {
+            var video = RECURSOS_VIDEOS[index];
+            if (!video) return;
+
+            if (video.id.indexOf(".mp4") !== -1 || video.id.startsWith("/")) {
+                playerContainer.innerHTML = '<video controls autoplay src="' + video.id + '" style="width:100%;height:100%;object-fit:cover;"></video>';
+            } else {
+                var embedUrl = "https://www.youtube.com/embed/" + video.id + "?autoplay=1&rel=0";
+                playerContainer.innerHTML = '<iframe id="recursosMainIframe" src="' + embedUrl + '" title="' + escapeHtml(video.title) + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+            }
+
+            if (mainTitle) mainTitle.textContent = video.title;
+            if (mainDesc) mainDesc.textContent = video.desc;
+
+            var items = playlistContainer.querySelectorAll(".custom-playlist-item");
+            items.forEach(function(item, idx) {
+                if (idx === index) {
+                    item.classList.add("active");
+                    item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                } else {
+                    item.classList.remove("active");
+                }
+            });
+        }
+
+        function escapeHtml(str) {
+            return (str || '').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+
+        RECURSOS_VIDEOS.forEach(function(video, index) {
+            var item = document.createElement("div");
+            item.className = "custom-playlist-item" + (index === 0 ? " active" : "");
+            item.innerHTML = '<div class="custom-playlist-thumb">' +
+                '<img src="' + video.thumb + '" alt="' + escapeHtml(video.title) + '" loading="lazy">' +
+                '<span class="custom-play-icon">&#9654;</span>' +
+                '</div>' +
+                '<div class="custom-playlist-info">' +
+                '<div class="custom-playlist-title">' + escapeHtml(video.title) + '</div>' +
+                '<div class="custom-playlist-duration">' + escapeHtml(video.duration) + '</div>' +
+                '</div>';
+
+            item.addEventListener("click", function() {
+                loadVideo(index);
+            });
+
+            playlistContainer.appendChild(item);
+        });
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initRecursosHub);
+    } else {
+        initRecursosHub();
+    }
+})();
+</script>
 		</section>
 				<section class="elementor-section elementor-top-section elementor-element elementor-element-3a3414bb elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="3a3414bb" data-element_type="section" data-e-type="section">
 						<div class="elementor-container elementor-column-gap-default">
