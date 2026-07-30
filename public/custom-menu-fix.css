@@ -208,6 +208,65 @@
     font-size: 12.5px !important;
 }
 
+/* ==========================================================================
+   TRANSPARENT FLAG LANGUAGE SWITCHER (AR 🇦🇷 | US 🇺🇸 | BR 🇧🇷)
+   ========================================================================== */
+.menu-item-lang-wrapper {
+    display: inline-flex !important;
+    align-items: center !important;
+    margin-left: 12px !important;
+    position: relative !important;
+}
+
+.lang-switcher-container {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.lang-option {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0.4 !important;
+    cursor: pointer !important;
+    transition: opacity 0.25s ease, transform 0.25s ease, filter 0.25s ease !important;
+    user-select: none !important;
+    padding: 2px 3px !important;
+}
+
+.lang-option:hover {
+    opacity: 0.85 !important;
+    transform: scale(1.15) !important;
+}
+
+.lang-option.active {
+    opacity: 1 !important;
+    transform: scale(1.2) !important;
+    filter: drop-shadow(0 2px 6px rgba(56, 189, 248, 0.6)) !important;
+}
+
+.lang-flag {
+    font-size: 18px !important;
+    line-height: 1 !important;
+    display: inline-block !important;
+}
+
+.lang-divider {
+    color: rgba(255, 255, 255, 0.35) !important;
+    font-size: 12px !important;
+    font-weight: 300 !important;
+    margin: 0 1px !important;
+    user-select: none !important;
+}
+
 @media (max-width: 1024px) {
     .nav-search-results-dropdown {
         width: 100% !important;
@@ -599,4 +658,537 @@ footer.elementor-location-footer .elementor-icon-list-item a:hover {
     transform: translateY(-3px) scale(1.03) !important;
     box-shadow: 0 15px 40px rgba(0, 208, 132, 0.5) !important;
     color: #ffffff !important;
+}
+
+/* ==========================================================================
+   SUN & MOON DARK/LIGHT MODE TOGGLE SWITCH
+   ========================================================================== */
+
+.menu-item-theme-toggle {
+    display: inline-flex !important;
+    align-items: center !important;
+    margin-left: 12px !important;
+    position: relative !important;
+}
+
+.theme-switch-container {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Floating Corner Toggle Widget */
+.floating-theme-toggle {
+    position: fixed !important;
+    bottom: 24px !important;
+    right: 24px !important;
+    z-index: 999999 !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    padding: 6px 8px !important;
+    border-radius: 40px !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body.dark-mode .floating-theme-toggle,
+html.dark-mode .floating-theme-toggle {
+    background: rgba(15, 23, 42, 0.85) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+}
+
+.floating-theme-toggle:hover {
+    transform: translateY(-3px) scale(1.05) !important;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Switch Button Base */
+.theme-toggle-switch {
+    position: relative !important;
+    display: inline-block !important;
+    width: 60px !important;
+    height: 32px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    border-radius: 32px !important;
+    background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%) !important;
+    cursor: pointer !important;
+    outline: none !important;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.3) !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    overflow: hidden !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+.theme-toggle-switch:hover {
+    transform: scale(1.06) !important;
+    box-shadow: 0 6px 16px rgba(2, 132, 199, 0.45), inset 0 2px 4px rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Dark Mode state of switch */
+.theme-toggle-switch.is-dark {
+    background: linear-gradient(135deg, #1e1b4b 0%, #311b92 50%, #4c1d95 100%) !important;
+    border-color: rgba(168, 85, 247, 0.4) !important;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.15) !important;
+}
+
+.theme-toggle-switch.is-dark:hover {
+    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.55), inset 0 2px 4px rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Track layout */
+.theme-toggle-track {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 7px !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+}
+
+/* Sun and Moon background icons inside switch */
+.theme-toggle-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 1 !important;
+    transition: opacity 0.3s ease, transform 0.3s ease !important;
+    pointer-events: none !important;
+}
+
+.theme-toggle-sun {
+    color: #fef08a !important;
+    opacity: 0.9 !important;
+    filter: drop-shadow(0 0 3px rgba(254, 240, 138, 0.8));
+}
+
+.theme-toggle-moon {
+    color: #e0e7ff !important;
+    opacity: 0.7 !important;
+    filter: drop-shadow(0 0 3px rgba(224, 231, 255, 0.8));
+}
+
+.theme-toggle-switch.is-dark .theme-toggle-sun {
+    opacity: 0.5 !important;
+}
+
+.theme-toggle-switch.is-dark .theme-toggle-moon {
+    opacity: 1 !important;
+}
+
+/* Sliding Knob (Thumb) */
+.theme-toggle-thumb {
+    position: absolute !important;
+    top: 3px !important;
+    left: 3px !important;
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 50% !important;
+    background: #ffffff !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3), inset 0 -1px 2px rgba(0,0,0,0.1) !important;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.4s ease, box-shadow 0.4s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 2 !important;
+}
+
+.theme-toggle-switch.is-dark .theme-toggle-thumb {
+    transform: translateX(28px) !important;
+    background: #0f172a !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(168, 85, 247, 0.6) !important;
+}
+
+/* Thumb interior SVG icons */
+.thumb-icon {
+    position: absolute !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease !important;
+}
+
+.sun-icon {
+    color: #f59e0b !important;
+    opacity: 1 !important;
+    transform: rotate(0deg) scale(1) !important;
+}
+
+.moon-icon {
+    color: #a855f7 !important;
+    opacity: 0 !important;
+    transform: rotate(-90deg) scale(0.5) !important;
+}
+
+.theme-toggle-switch.is-dark .sun-icon {
+    opacity: 0 !important;
+    transform: rotate(90deg) scale(0.5) !important;
+}
+
+.theme-toggle-switch.is-dark .moon-icon {
+    opacity: 1 !important;
+    transform: rotate(0deg) scale(1) !important;
+}
+
+/* ==========================================================================
+   EVRIDEO RAPIDCLIP DARK MODE THEME OVERRIDES (BODY CONTENT ONLY)
+   ========================================================================== */
+
+html.dark-mode,
+body.dark-mode {
+    background-color: #0b0f19 !important;
+    color: #94a3b8 !important;
+}
+
+/* Page content background */
+body.dark-mode #page,
+body.dark-mode #content,
+body.dark-mode .site-content,
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) {
+    background-color: transparent !important;
+}
+
+/* ==========================================================================
+   ABSOLUTE HEADER & FOOTER CLEANUP (ZERO BORDERS, ZERO BOXES, FLAT & CLEAN)
+   ========================================================================== */
+
+/* Header section background across full width */
+body.dark-mode header,
+body.dark-mode .site-header,
+body.dark-mode .elementor-location-header,
+body.dark-mode header > .elementor-section,
+body.dark-mode .elementor-location-header > .elementor-section {
+    background-color: #0b0f19 !important;
+    background: #0b0f19 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: none !important;
+}
+
+/* Strip ALL boxes, backgrounds, borders, radii, and margins from header columns */
+body.dark-mode header *,
+body.dark-mode .elementor-location-header * {
+    box-shadow: none !important;
+}
+
+body.dark-mode header .elementor-column > .elementor-widget-wrap,
+body.dark-mode .elementor-location-header .elementor-column > .elementor-widget-wrap,
+body.dark-mode header .elementor-inner-column > .elementor-widget-wrap,
+body.dark-mode .elementor-location-header .elementor-inner-column > .elementor-widget-wrap,
+body.dark-mode header .elementor-widget-wrap,
+body.dark-mode .elementor-location-header .elementor-widget-wrap,
+body.dark-mode header .elementor-widget,
+body.dark-mode .elementor-location-header .elementor-widget,
+body.dark-mode header .elementor-widget-container,
+body.dark-mode .elementor-location-header .elementor-widget-container {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+}
+
+/* Top Navigation Links in Dark Mode */
+body.dark-mode header .elementor-nav-menu--main a.elementor-item,
+body.dark-mode .elementor-location-header .elementor-nav-menu--main a.elementor-item {
+    color: #ffffff !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    font-weight: 600 !important;
+}
+
+body.dark-mode header .elementor-nav-menu--main a.elementor-item:hover,
+body.dark-mode .elementor-location-header .elementor-nav-menu--main a.elementor-item:hover {
+    color: #38bdf8 !important;
+    background: transparent !important;
+}
+
+/* Navigation Submenu Dropdowns */
+body.dark-mode .elementor-nav-menu--main .sub-menu {
+    background-color: #0f172a !important;
+    border: 1px solid rgba(56, 189, 248, 0.2) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-mode .elementor-nav-menu--main .sub-menu li a {
+    color: #cbd5e1 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+}
+
+body.dark-mode .elementor-nav-menu--main .sub-menu li a:hover {
+    background-color: #1e293b !important;
+    color: #38bdf8 !important;
+}
+
+/* Footer Cleanup */
+body.dark-mode footer *,
+body.dark-mode .site-footer *,
+body.dark-mode .elementor-location-footer * {
+    box-shadow: none !important;
+}
+
+body.dark-mode footer .elementor-widget-wrap,
+body.dark-mode .elementor-location-footer .elementor-widget-wrap {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+}
+
+/* ==========================================================================
+   BODY CONTENT OVERRIDES & CARDS (EXCLUDES HEADER & FOOTER)
+   ========================================================================== */
+
+/* Remove rectangular background boxes from individual text and icon widgets in main body */
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-widget:not(header *):not(.elementor-location-header *),
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-widget-container:not(header *):not(.elementor-location-header *),
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-heading-title:not(header *):not(.elementor-location-header *),
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-text-editor:not(header *):not(.elementor-location-header *),
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-image:not(header *):not(.elementor-location-header *),
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-icon:not(header *):not(.elementor-location-header *),
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) p:not(header *):not(.elementor-location-header *),
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) h1:not(header *):not(.elementor-location-header *),
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) h2:not(header *):not(.elementor-location-header *),
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) h3:not(header *):not(.elementor-location-header *),
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) h4:not(header *):not(.elementor-location-header *),
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) h5:not(header *):not(.elementor-location-header *),
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) h6:not(header *):not(.elementor-location-header *) {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Evrideo Typography in Dark Mode */
+body.dark-mode main h1,
+body.dark-mode main h2,
+body.dark-mode main h3,
+body.dark-mode main h4,
+body.dark-mode main h5,
+body.dark-mode main h6,
+body.dark-mode .elementor-page h1,
+body.dark-mode .elementor-page h2,
+body.dark-mode .elementor-page h3,
+body.dark-mode .elementor-page h4,
+body.dark-mode .elementor-page h5,
+body.dark-mode .elementor-page h6,
+body.dark-mode .elementor-heading-title:not(header *):not(.elementor-location-header *),
+body.dark-mode .elementor-image-box-title:not(header *):not(.elementor-location-header *) {
+    color: #f8fafc !important;
+}
+
+body.dark-mode p:not(header *):not(.elementor-location-header *),
+body.dark-mode li:not(.menu-item):not(header *):not(.elementor-location-header *),
+body.dark-mode .elementor-text-editor:not(header *):not(.elementor-location-header *),
+body.dark-mode .elementor-image-box-description:not(header *):not(.elementor-location-header *) {
+    color: #94a3b8 !important;
+}
+
+/* Evrideo Links */
+body.dark-mode a:not(.elementor-button):not(.nav-search-button):not(.custom-pdf-btn):not(.btn):not(.elementor-item):not(.elementor-sub-item) {
+    color: #38bdf8 !important;
+}
+
+body.dark-mode a:not(.elementor-button):not(.elementor-item):not(.elementor-sub-item):hover {
+    color: #60a5fa !important;
+}
+
+/* ==========================================================================
+   SECTION HEADINGS CLEANUP ("Nuestras soluciones", "Módulos Adicionales", "Clientes", "Casos de Éxito")
+   MUST BE 100% FLAT & TRANSPARENT WITH NO BOXES OR BORDERS
+   ========================================================================== */
+
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-col-100 > .elementor-widget-wrap,
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-widget-heading,
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-widget-heading .elementor-widget-container {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 10px 0 !important;
+    min-height: auto !important;
+}
+
+/* Section Titles Color: Clean Light Cyan/Blue (#38bdf8) */
+body.dark-mode .elementor-widget-heading h1.elementor-heading-title,
+body.dark-mode .elementor-widget-heading h2.elementor-heading-title,
+body.dark-mode .elementor-widget-heading h3.elementor-heading-title,
+body.dark-mode .elementor-widget-heading h4.elementor-heading-title,
+body.dark-mode .elementor-widget-heading h5.elementor-heading-title {
+    color: #38bdf8 !important;
+    font-weight: 700 !important;
+}
+
+/* ==========================================================================
+   UNIFIED EVRIDEO CARDS (Soluciones & Módulos Adicionales ONLY)
+   ========================================================================== */
+
+/* Add padding to grid columns so adjacent cards NEVER touch */
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-column.elementor-col-33,
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-column.elementor-col-50 {
+    padding: 10px !important;
+}
+
+/* Card Containers ONLY for 3-column / 2-column solution and module items */
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-column.elementor-col-33:not(header *):not(footer *) > .elementor-widget-wrap,
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-column.elementor-col-50:not(header *):not(footer *) > .elementor-widget-wrap,
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-icon-box-wrapper:not(header *):not(footer *) {
+    background: #0f172a !important;
+    border: 1px solid rgba(56, 189, 248, 0.18) !important;
+    border-radius: 16px !important;
+    padding: 28px 20px !important;
+    margin: 0 !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35) !important;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    text-align: center !important;
+    min-height: 280px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+}
+
+/* Hover state on Cards */
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-column.elementor-col-33:not(header *):not(footer *) > .elementor-widget-wrap:hover,
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-column.elementor-col-50:not(header *):not(footer *) > .elementor-widget-wrap:hover,
+body.dark-mode .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-icon-box-wrapper:hover:not(header *):not(footer *) {
+    background: #1e293b !important;
+    border-color: rgba(56, 189, 248, 0.5) !important;
+    transform: translateY(-5px) !important;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.15) !important;
+}
+
+/* Inner containers inside cards: MUST be transparent with no nested sub-boxes */
+body.dark-mode .elementor-column:not(header *) .elementor-inner-section,
+body.dark-mode .elementor-column:not(header *) .elementor-inner-column,
+body.dark-mode .elementor-column:not(header *) .elementor-inner-column > .elementor-widget-wrap {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+/* Card Headings: Centered & Properly Wrapped inside Card */
+body.dark-mode .elementor-column:not(header *):not(.elementor-col-100) .elementor-heading-title,
+body.dark-mode .elementor-column:not(header *):not(.elementor-col-100) .elementor-heading-title a,
+body.dark-mode .elementor-icon-box-title,
+body.dark-mode .elementor-icon-box-title a,
+body.dark-mode .elementor-icon-box-wrapper .elementor-icon-box-title {
+    color: #f8fafc !important;
+    font-size: 19px !important;
+    font-weight: 700 !important;
+    margin: 10px 0 !important;
+    text-align: center !important;
+    white-space: normal !important; /* Allows long titles to wrap naturally */
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    line-height: 1.35 !important;
+    width: 100% !important;
+    padding: 0 4px !important;
+    transition: color 0.3s ease !important;
+}
+
+body.dark-mode .elementor-column:not(header *):not(.elementor-col-100):hover .elementor-heading-title,
+body.dark-mode .elementor-column:not(header *):not(.elementor-col-100):hover .elementor-heading-title a,
+body.dark-mode .elementor-icon-box-wrapper:hover .elementor-icon-box-title {
+    color: #38bdf8 !important;
+}
+
+/* Card Descriptions: Centered inside Card */
+body.dark-mode .elementor-column:not(header *):not(.elementor-col-100) .elementor-widget-text-editor,
+body.dark-mode .elementor-column:not(header *):not(.elementor-col-100) .elementor-widget-text-editor p,
+body.dark-mode .elementor-column:not(header *):not(.elementor-col-100) .elementor-widget-text-editor a,
+body.dark-mode .elementor-icon-box-description {
+    color: #94a3b8 !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    text-align: center !important; /* Centered text */
+    margin: 0 auto 16px auto !important;
+    text-decoration: none !important;
+    width: 100% !important;
+}
+
+/* Icons in Solutions & Módulos Adicionales: LIGHT MODE (Celeste #38bdf8) */
+body:not(.dark-mode) .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-widget-image img,
+body:not(.dark-mode) .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-icon-box-img img,
+body:not(.dark-mode) .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-icon-box-icon i,
+body:not(.dark-mode) .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-icon-box-icon svg,
+body:not(.dark-mode) .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-icon-box-wrapper img,
+body:not(.dark-mode) .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-icon i,
+body:not(.dark-mode) .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-icon svg {
+    color: #38bdf8 !important;
+    fill: #38bdf8 !important;
+    filter: brightness(0) saturate(100%) invert(60%) sepia(90%) saturate(1500%) hue-rotate(170deg) drop-shadow(0 4px 10px rgba(56, 189, 248, 0.25)) !important;
+    transition: transform 0.3s ease, filter 0.3s ease !important;
+}
+
+body:not(.dark-mode) .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-column:hover .elementor-widget-image img,
+body:not(.dark-mode) .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-icon-box-wrapper:hover img,
+body:not(.dark-mode) .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-icon-box-wrapper:hover i,
+body:not(.dark-mode) .elementor-section:not(.elementor-location-header):not(.elementor-location-footer) .elementor-icon-box-wrapper:hover svg {
+    filter: brightness(0) saturate(100%) invert(50%) sepia(95%) saturate(2000%) hue-rotate(170deg) drop-shadow(0 6px 14px rgba(56, 189, 248, 0.5)) !important;
+    transform: scale(1.1) !important;
+}
+
+/* Icons in Solutions & Módulos Adicionales: DARK MODE (Pure White #ffffff) */
+body.dark-mode .elementor-widget-image:not(header *):not(footer *) img,
+body.dark-mode .elementor-icon-box-img:not(header *):not(footer *) img,
+body.dark-mode .elementor-icon-box-icon:not(header *):not(footer *) i,
+body.dark-mode .elementor-icon-box-icon:not(header *):not(footer *) svg,
+body.dark-mode .elementor-icon-box-wrapper:not(header *):not(footer *) img,
+body.dark-mode .elementor-icon:not(header *):not(footer *) i,
+body.dark-mode .elementor-icon:not(header *):not(footer *) svg,
+html.dark-mode .elementor-widget-image:not(header *):not(footer *) img,
+html.dark-mode .elementor-icon-box-img:not(header *):not(footer *) img {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+    filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.75)) !important;
+    transition: transform 0.3s ease, filter 0.3s ease !important;
+}
+
+body.dark-mode .elementor-column:hover .elementor-widget-image img,
+body.dark-mode .elementor-icon-box-wrapper:hover img,
+body.dark-mode .elementor-icon-box-wrapper:hover i,
+body.dark-mode .elementor-icon-box-wrapper:hover svg,
+html.dark-mode .elementor-column:hover .elementor-widget-image img {
+    filter: brightness(0) invert(1) drop-shadow(0 0 16px rgba(56, 189, 248, 1)) !important;
+    transform: scale(1.1) !important;
+}
+
+/* EVRIDEO RAPIDCLIP BUTTONS */
+body.dark-mode .elementor-button,
+body.dark-mode a.elementor-button,
+body.dark-mode .elementor-button-link {
+    background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%) !important;
+    border: none !important;
+    border-radius: 30px !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35) !important;
+    transition: all 0.3s ease !important;
+}
+
+body.dark-mode .elementor-button:hover,
+body.dark-mode a.elementor-button:hover,
+body.dark-mode .elementor-button-link:hover {
+    background: linear-gradient(135deg, #60a5fa 0%, #1d4ed8 100%) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.5), 0 6px 18px rgba(37, 99, 235, 0.45) !important;
 }
