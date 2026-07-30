@@ -509,7 +509,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
         "Productos": { es: "Productos", en: "Products", pt: "Produtos" },
         "Empresa": { es: "Empresa", en: "Company", pt: "Empresa" },
-        "TV Cable Operador": { es: "TV Cable Operador", en: "TV Cable Operator", pt: "Operador de TV a Cabo" }
+        "TV Cable Operador": { es: "TV Cable Operador", en: "TV Cable Operator", pt: "Operador de TV a Cabo" },
+
+        // Header Carousel Slides
+        "Estaremos presentes en SET 2026 Stand #37 Foccus, del 18 al 20 de Agosto, en Sao Paulo, Brasil.": {
+            es: "Estaremos presentes en SET 2026 Stand #37 Foccus, del 18 al 20 de Agosto, en Sao Paulo, Brasil.",
+            en: "We will be present at SET 2026 Booth #37 Foccus, from August 18 to 20, in Sao Paulo, Brazil.",
+            pt: "Estaremos presentes no SET 2026 Estande #37 Foccus, de 18 a 20 de Agosto, em São Paulo, Brasil."
+        },
+        "ViDeus Catalog es el sistema MAM local que combina catalogación tradicional con inteligencia artificial on-premise para transformar grandes volúmenes de video, audio e imágenes en información buscable, indexada y lista para producción.": {
+            es: "ViDeus Catalog es el sistema MAM local que combina catalogación tradicional con inteligencia artificial on-premise para transformar grandes volúmenes de video, audio e imágenes en información buscable, indexada y lista para producción.",
+            en: "ViDeus Catalog is the local MAM system combining traditional cataloging with on-premise AI to transform high volumes of video, audio, and images into searchable, indexed, production-ready data.",
+            pt: "ViDeus Catalog é o sistema MAM local que combina catalogação tradicional com inteligência artificial on-premise para transformar grandes volumes de vídeo, áudio e imagens em dados pesquisáveis, indexados e prontos para produção."
+        },
+        "Software y Soluciones Innovadoras para la Grabación, Auditoría Comercial, Monitoreo Técnico y Gestión de Contenidos de Radio y Televisión.": {
+            es: "Software y Soluciones Innovadoras para la Grabación, Auditoría Comercial, Monitoreo Técnico y Gestión de Contenidos de Radio y Televisión.",
+            en: "Innovative Software and Solutions for Recording, Commercial Auditing, Technical Monitoring, and Radio & TV Content Management.",
+            pt: "Software e Soluções Inovadoras para Gravação, Auditoria Comercial, Monitoramento Técnico e Gestão de Conteúdos de Rádio e TV."
+        },
+        "Recibí señales de TV en vivo directamente desde plataformas OTT con DRM. Sin hardware. Sin complicaciones.": {
+            es: "Recibí señales de TV en vivo directamente desde plataformas OTT con DRM. Sin hardware. Sin complicaciones.",
+            en: "Receive live TV signals directly from OTT platforms with DRM. No hardware. No complications.",
+            pt: "Receba sinais de TV ao vivo diretamente de plataformas OTT com DRM. Sem hardware. Sem complicações."
+        },
+        "Conectá tus cuentas de streaming y empezá a grabar, monitorear y clipear contenido en vivo sin usar decodificadores, placas adicionales ni infraestructura física.": {
+            es: "Conectá tus cuentas de streaming y empezá a grabar, monitorear y clipear contenido en vivo sin usar decodificadores, placas adicionales ni infraestructura física.",
+            en: "Connect your streaming accounts and start recording, monitoring, and clipping live content without set-top boxes, extra cards, or physical infrastructure.",
+            pt: "Conecte suas contas de streaming e comece a gravar, monitorar e criar clipes de conteúdo ao vivo sem decodificadores, placas adicionais ou infraestrutura física."
+        },
+        "Nuestro Software Utiliza Inteligencia Artificial para Detectar Rostros, logos, objetos, desnudos, Crear Clips automáticos y mucho más.": {
+            es: "Nuestro Software Utiliza Inteligencia Artificial para Detectar Rostros, logos, objetos, desnudos, Crear Clips automáticos y mucho más.",
+            en: "Our Software Uses Artificial Intelligence to Detect Faces, logos, objects, nudity, Create automatic Clips, and much more.",
+            pt: "Nosso Software Utiliza Inteligência Artificial para Detectar Rostos, logotipos, objetos, nudes, Criar Clipes automáticos e muito mais."
+        },
+        "Más de 20 Años Brindando Soluciones de Monitoreo de Alta Calidad y un Servicio Excepcional a Nuestros Valiosos Clientes.": {
+            es: "Más de 20 Años Brindando Soluciones de Monitoreo de Alta Calidad y un Servicio Excepcional a Nuestros Valiosos Clientes.",
+            en: "Over 20 Years Providing High Quality Monitoring Solutions and Exceptional Service to Our Valued Clients.",
+            pt: "Mais de 20 Anos Oferecendo Soluções de Monitoramento de Alta Qualidade e um Serviço Excepcional aos Nossos Valiosos Clientes."
+        },
+        "Lee más": { es: "Lee más", en: "Read more", pt: "Leia mais" },
+        "Conoce más": { es: "Conoce más", en: "Learn more", pt: "Saiba mais" }
     };
 
     function applyLanguage(lang) {
@@ -537,7 +576,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Translate text elements
-        var selectors = 'a, h1, h2, h3, h4, h5, p, span.elementor-icon-list-text, span.elementor-button-text';
+        var selectors = 'a, h1, h2, h3, h4, h5, p, span.elementor-icon-list-text, span.elementor-button-text, div.elementor-slide-description, div.elementor-slide-button';
         document.querySelectorAll(selectors).forEach(function(el) {
             var currentText = el.innerText ? el.innerText.trim() : '';
             Object.keys(DICTIONARY).forEach(function(key) {
