@@ -1,4 +1,19 @@
+// Immediate Dark Mode State Check (Prevents theme flash on load)
+(function() {
+    var savedTheme = localStorage.getItem('3way_theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark-mode');
+    } else {
+        document.documentElement.classList.remove('dark-mode');
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Sync body class with documentElement class
+    if (document.documentElement.classList.contains('dark-mode')) {
+        document.body.classList.add('dark-mode');
+    }
+
     // 1. Mobile Menu Toggle Fix
     var toggles = document.querySelectorAll('.elementor-menu-toggle');
     toggles.forEach(function(toggle) {
@@ -52,13 +67,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 loop: true,
                 slidesPerView: 2,
                 spaceBetween: 20,
-                speed: 7000,
+                speed: 1000,
                 autoplay: {
-                    delay: 0,
+                    delay: 3500,
                     disableOnInteraction: false,
-                    pauseOnMouseEnter: false
+                    pauseOnMouseEnter: true
                 },
-                allowTouchMove: false,
                 breakpoints: {
                     768: { slidesPerView: 4, spaceBetween: 30 },
                     1024: { slidesPerView: 6, spaceBetween: 40 }
@@ -311,5 +325,248 @@ document.addEventListener('DOMContentLoaded', function() {
         forms.forEach(setupLiveSearchForm);
     }
 
+    // 6. Inject & Setup Sun/Moon Dark-Light Mode Switch Toggle
+    function createSwitchHTML(idPrefix) {
+        return `
+            <div class="theme-switch-container" id="${idPrefix}-container">
+                <button type="button" class="theme-toggle-switch" id="${idPrefix}-btn" aria-label="Cambiar modo de luz u oscuridad" title="Cambiar modo de luz">
+                    <span class="theme-toggle-track">
+                        <span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </span>
+                        <span class="theme-toggle-icon theme-toggle-moon" aria-hidden="true">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </span>
+                        <span class="theme-toggle-thumb">
+                            <span class="thumb-icon sun-icon" aria-hidden="true">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                                    <circle cx="12" cy="12" r="4"></circle>
+                                    <path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+                                </svg>
+                            </span>
+                            <span class="thumb-icon moon-icon" aria-hidden="true">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                            </span>
+                        </span>
+                    </span>
+                </button>
+            </div>
+        `;
+    }
+
+    function toggleTheme() {
+        var isDark = document.documentElement.classList.toggle('dark-mode');
+        document.body.classList.toggle('dark-mode', isDark);
+        localStorage.setItem('3way_theme', isDark ? 'dark' : 'light');
+        updateAllSwitches();
+    }
+
+    function updateAllSwitches() {
+        var isDark = document.documentElement.classList.contains('dark-mode');
+        var buttons = document.querySelectorAll('.theme-toggle-switch');
+        buttons.forEach(function(btn) {
+            if (isDark) {
+                btn.classList.add('is-dark');
+                btn.setAttribute('title', 'Cambiar a modo claro');
+                btn.setAttribute('aria-label', 'Cambiar a modo claro');
+            } else {
+                btn.classList.remove('is-dark');
+                btn.setAttribute('title', 'Cambiar a modo oscuro');
+                btn.setAttribute('aria-label', 'Cambiar a modo oscuro');
+            }
+        });
+    }
+
+    function ensureThemeToggle() {
+        // 1. Header Nav Desktop
+        var desktopMenus = document.querySelectorAll('.elementor-nav-menu--main .elementor-nav-menu');
+        desktopMenus.forEach(function(menu) {
+            if (!menu.querySelector('.menu-item-theme-toggle')) {
+                var toggleLi = document.createElement('li');
+                toggleLi.className = 'menu-item menu-item-theme-toggle';
+                toggleLi.innerHTML = createSwitchHTML('nav-theme-toggle');
+                menu.appendChild(toggleLi);
+            }
+        });
+
+        // 2. Header Nav Mobile
+        var mobileMenus = document.querySelectorAll('.elementor-nav-menu--dropdown .elementor-nav-menu');
+        mobileMenus.forEach(function(menu) {
+            if (!menu.querySelector('.menu-item-theme-toggle')) {
+                var toggleLi = document.createElement('li');
+                toggleLi.className = 'menu-item menu-item-theme-toggle';
+                toggleLi.innerHTML = createSwitchHTML('mobile-nav-theme-toggle');
+                menu.appendChild(toggleLi);
+            }
+        });
+
+        // 3. Floating Bottom-Right Corner Toggle Widget (Always accessible)
+        if (!document.getElementById('floating-theme-toggle-wrapper')) {
+            var floatingDiv = document.createElement('div');
+            floatingDiv.id = 'floating-theme-toggle-wrapper';
+            floatingDiv.className = 'floating-theme-toggle';
+            floatingDiv.innerHTML = createSwitchHTML('floating-theme-toggle');
+            document.body.appendChild(floatingDiv);
+        }
+
+        // Attach listeners to all switches
+        document.querySelectorAll('.theme-toggle-switch').forEach(function(btn) {
+            btn.removeEventListener('click', toggleTheme);
+            btn.addEventListener('click', toggleTheme);
+        });
+
+        updateAllSwitches();
+    }
+
     ensureHeaderSearchBar();
+    ensureThemeToggle();
+
+    // ==========================================================================
+    // 6. TRILINGUAL I18N TRANSLATION ENGINE (ES 🇦🇷 / EN 🇺🇸 / PT 🇧🇷)
+    // ==========================================================================
+    var DICTIONARY = {
+        "PRODUCTOS": { es: "PRODUCTOS", en: "PRODUCTS", pt: "PRODUTOS" },
+        "RECURSOS": { es: "RECURSOS", en: "RESOURCES", pt: "RECURSOS" },
+        "CONTACTO": { es: "CONTACTO", en: "CONTACT", pt: "CONTATO" },
+        "Soluciones": { es: "Soluciones", en: "Solutions", pt: "Soluções" },
+        "Blog de Tecnología": { es: "Blog de Tecnología", en: "Tech Blog", pt: "Blog de Tecnologia" },
+        "Quienes somos": { es: "Quienes somos", en: "About Us", pt: "Quem somos" },
+        "Recursos Humanos": { es: "Recursos Humanos", en: "Human Resources", pt: "Recursos Humanos" },
+        "Novedades": { es: "Novedades", en: "News", pt: "Novidades" },
+        "Calculador de Almacenamiento": { es: "Calculador de Almacenamiento", en: "Storage Calculator", pt: "Calculadora de Armazenamento" },
+        "Contacto": { es: "Contacto", en: "Contact", pt: "Contato" },
+
+        "Nuestras soluciones": { es: "Nuestras soluciones", en: "Our Solutions", pt: "Nossas soluções" },
+        "Módulos Adicionales": { es: "Módulos Adicionales", en: "Additional Modules", pt: "Módulos Adicionais" },
+        "Clientes que confían en nosotros": { es: "Clientes que confían en nosotros", en: "Clients Who Trust Us", pt: "Clientes que confiam em nós" },
+        "Casos de éxito": { es: "Casos de éxito", en: "Success Stories", pt: "Casos de sucesso" },
+        "Casos de éxito y novedades": { es: "Casos de éxito y novedades", en: "Success Stories & News", pt: "Casos de sucesso e novidades" },
+
+        "Visualización de múltiples señales de Radio y TV en una o varias pantallas con alarmas de QoE y QoS.": {
+            es: "Visualización de múltiples señales de Radio y TV en una o varias pantallas con alarmas de QoE y QoS.",
+            en: "Multi-channel Radio and TV signal visualization across single or multiple screens with QoE and QoS alarms.",
+            pt: "Visualização de múltiplos sinais de Rádio e TV em uma ou várias telas com alarmes de QoE e QoS."
+        },
+        "Software de grabación de Radio y TV para extracción de clips y creación de contenidos.": {
+            es: "Software de grabación de Radio y TV para extracción de clips y creación de contenidos.",
+            en: "Radio and TV recording software for clip extraction and content creation.",
+            pt: "Software de gravação de Rádio e TV para extração de clipes e criação de conteúdos."
+        },
+        "Grabación para auditoría y gestión inteligente de contenidos de Radio y TV.": {
+            es: "Grabación para auditoría y gestión inteligente de contenidos de Radio y TV.",
+            en: "Recording for auditing and smart content management of Radio and TV.",
+            pt: "Gravação para auditoria e gestão inteligente de conteúdos de Rádio e TV."
+        },
+        "Monitoree más de 150 señales con sistema de barrido automático de canales.": {
+            es: "Monitoree más de 150 señales con sistema de barrido automático de canales.",
+            en: "Monitor over 150 signals with an automated channel sweep system.",
+            pt: "Monitore mais de 150 sinais com sistema de varredura automática de canais."
+        },
+        "Conoce más soluciones": { es: "Conoce más soluciones", en: "Discover more solutions", pt: "Conheça mais soluções" },
+        "Ver más": { es: "Ver más", en: "See more", pt: "Ver mais" },
+
+        "Detección de objetos": { es: "Detección de objetos", en: "Object Detection", pt: "Detecção de objetos" },
+        "La IA esta entrenada con una base de datos grande y variada de imágenes, tanto de objetos como de imágenes que no lo son, para evitar falsas detecciones, y puede detectar cualquier objeto previamente cargado.": {
+            es: "La IA esta entrenada con una base de datos grande y variada de imágenes, tanto de objetos como de imágenes que no lo son, para evitar falsas detecciones, y puede detectar cualquier objeto previamente cargado.",
+            en: "AI trained on large and varied image databases to prevent false positives and accurately detect pre-loaded objects.",
+            pt: "A IA é treinada com um banco de dados amplo de imagens para evitar falsos positivos e detectar qualquer objeto pré-carregado."
+        },
+        "Detección de desnudos": { es: "Detección de desnudos", en: "Nudity Detection", pt: "Detecção de nudes" },
+        "El software es capaz de analizar las transmisiones en vivo o grabadas en tiempo real para identificar imágenes de desnudos o contenido inapropiado.": {
+            es: "El software es capaz de analizar las transmisiones en vivo o grabadas en tiempo real para identificar imágenes de desnudos o contenido inapropiado.",
+            en: "Real-time software analysis for live or recorded broadcasts to detect nudity or inappropriate content.",
+            pt: "O software analisa transmissões ao vivo ou gravadas em tempo real para identificar conteúdo inadequado."
+        },
+        "Auto Highlight Clipping": { es: "Auto Highlight Clipping", en: "Auto Highlight Clipping", pt: "Auto Highlight Clipping" },
+        "Es una solución innovadora que permite la creación automática de highlights a partir de grabaciones de canales de radio y televisión. Utilizando avanzados algoritmos de inteligencia artificial y análisis de contenido.": {
+            es: "Es una solución innovadora que permite la creación automática de highlights a partir de grabaciones de canales de radio y televisión. Utilizando avanzados algoritmos de inteligencia artificial y análisis de contenido.",
+            en: "Innovative solution for automated highlight creation from radio and TV recordings using AI and content analysis algorithms.",
+            pt: "Solução inovadora que permite a criação automática de destaques a partir de gravações de rádio e TV usando IA."
+        },
+        "Reconocimiento de rostros": { es: "Reconocimiento de rostros", en: "Face Recognition", pt: "Reconhecimento facial" },
+        "Permite tener una detección automática de personas en las diferentes señales de televisión y/o streamings que estamos recibiendo.": {
+            es: "Permite tener una detección automática de personas en las diferentes señales de televisión y/o streamings que estamos recibiendo.",
+            en: "Enables automated person detection across incoming TV signals and streaming feeds.",
+            pt: "Permite a detecção automática de pessoas nos diferentes sinais de TV e transmissões de streaming."
+        },
+
+        "Leer Más >>": { es: "Leer Más >>", en: "Read More >>", pt: "Leia Mais >>" },
+        "Leer más": { es: "Leer más", en: "Read more", pt: "Leia mais" },
+
+        "Productos": { es: "Productos", en: "Products", pt: "Produtos" },
+        "Empresa": { es: "Empresa", en: "Company", pt: "Empresa" },
+        "TV Cable Operador": { es: "TV Cable Operador", en: "TV Cable Operator", pt: "Operador de TV a Cabo" }
+    };
+
+    function applyLanguage(lang) {
+        localStorage.setItem('3way_lang', lang);
+        document.documentElement.setAttribute('lang', lang === 'en' ? 'en-US' : (lang === 'pt' ? 'pt-BR' : 'es-AR'));
+
+        // Update active class on flag options
+        document.querySelectorAll('.lang-option').forEach(function(opt) {
+            if (opt.getAttribute('data-lang') === lang) {
+                opt.classList.add('active');
+            } else {
+                opt.classList.remove('active');
+            }
+        });
+
+        // Update search placeholder
+        document.querySelectorAll('.nav-search-input').forEach(function(input) {
+            if (lang === 'en') {
+                input.placeholder = "Search tool or solution...";
+            } else if (lang === 'pt') {
+                input.placeholder = "Buscar ferramenta ou solução...";
+            } else {
+                input.placeholder = "Buscar herramienta o solución...";
+            }
+        });
+
+        // Translate text elements
+        var selectors = 'a, h1, h2, h3, h4, h5, p, span.elementor-icon-list-text, span.elementor-button-text';
+        document.querySelectorAll(selectors).forEach(function(el) {
+            var currentText = el.innerText ? el.innerText.trim() : '';
+            Object.keys(DICTIONARY).forEach(function(key) {
+                var entry = DICTIONARY[key];
+                if (currentText === entry.es || currentText === entry.en || currentText === entry.pt) {
+                    var targetText = entry[lang];
+                    if (targetText && el.childNodes.length <= 1) {
+                        el.innerText = targetText;
+                    }
+                }
+            });
+        });
+    }
+
+    function initLanguageSwitcher() {
+        var currentLang = localStorage.getItem('3way_lang') || 'es';
+        applyLanguage(currentLang);
+
+        document.querySelectorAll('.lang-option').forEach(function(opt) {
+            opt.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var targetLang = this.getAttribute('data-lang');
+                if (targetLang) {
+                    applyLanguage(targetLang);
+                }
+            });
+        });
+    }
+
+    initLanguageSwitcher();
 });
