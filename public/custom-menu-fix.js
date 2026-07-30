@@ -426,7 +426,13 @@ document.addEventListener('DOMContentLoaded', function() {
         // Attach listeners to all switches
         document.querySelectorAll('.theme-toggle-switch').forEach(function(btn) {
             btn.removeEventListener('click', toggleTheme);
-            btn.addEventLis    ensureHeaderSearchBar();
+            btn.addEventListener('click', toggleTheme);
+        });
+
+        updateAllSwitches();
+    }
+
+    ensureHeaderSearchBar();
     ensureThemeToggle();
 
     // ==========================================================================
