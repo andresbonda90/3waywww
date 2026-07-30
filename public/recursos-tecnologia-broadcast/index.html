@@ -1294,9 +1294,7 @@ gtag("config", "GT-WBZNCSFL");
                 }
             });
 
-            var slideWidth = slides[0] ? slides[0].offsetWidth * 0.62 : 480;
-            var offset = -currentIndex * slideWidth;
-            track.style.transform = "translateX(" + offset + "px)";
+            track.style.transform = "translateX(-" + (currentIndex * 100) + "%)";
         }
 
         if (prevBtn) prevBtn.addEventListener("click", function() { goToSlide(currentIndex - 1); });
