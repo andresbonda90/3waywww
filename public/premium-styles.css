@@ -152,7 +152,7 @@ body, .elementor-text-editor, p {
     }
 }
 
-/* ICON HOVER ANIMATION FOR MODULOS ADICIONALES */
+/* ICON ANIMATION & COLOR FOR MODULOS ADICIONALES */
 .elementor-element-601f2a03 .elementor-widget-image a,
 .elementor-element-51f60bb .elementor-widget-image a,
 .elementor-element-601f2a03 .elementor-widget-image img,
@@ -161,12 +161,26 @@ body, .elementor-text-editor, p {
     display: inline-block !important;
 }
 
-.elementor-element-601f2a03 .elementor-column:hover .elementor-widget-image img,
-.elementor-element-51f60bb .elementor-column:hover .elementor-widget-image img,
-.elementor-element-601f2a03 .elementor-widget-image:hover img,
-.elementor-element-51f60bb .elementor-widget-image:hover img {
+body:not(.dark-mode) .elementor-element-601f2a03 .elementor-widget-image img,
+body:not(.dark-mode) .elementor-element-51f60bb .elementor-widget-image img {
+    filter: brightness(0) saturate(100%) invert(60%) sepia(90%) saturate(1500%) hue-rotate(170deg) drop-shadow(0 4px 10px rgba(56, 189, 248, 0.25)) !important;
+}
+
+body.dark-mode .elementor-element-601f2a03 .elementor-widget-image img,
+body.dark-mode .elementor-element-51f60bb .elementor-widget-image img {
+    filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(255, 255, 255, 0.75)) !important;
+}
+
+body:not(.dark-mode) .elementor-element-601f2a03 .elementor-column:hover .elementor-widget-image img,
+body:not(.dark-mode) .elementor-element-51f60bb .elementor-column:hover .elementor-widget-image img {
     transform: translateY(-8px) scale(1.15) !important;
-    filter: drop-shadow(0 10px 18px rgba(0, 115, 170, 0.35)) !important;
+    filter: brightness(0) saturate(100%) invert(50%) sepia(95%) saturate(2000%) hue-rotate(170deg) drop-shadow(0 6px 14px rgba(56, 189, 248, 0.5)) !important;
+}
+
+body.dark-mode .elementor-element-601f2a03 .elementor-column:hover .elementor-widget-image img,
+body.dark-mode .elementor-element-51f60bb .elementor-column:hover .elementor-widget-image img {
+    transform: translateY(-8px) scale(1.15) !important;
+    filter: brightness(0) invert(1) drop-shadow(0 0 16px rgba(56, 189, 248, 1)) !important;
 }
 
 .elementor-element-601f2a03 .elementor-column:hover .elementor-heading-title a,
