@@ -426,18 +426,39 @@ document.addEventListener('DOMContentLoaded', function() {
         // Attach listeners to all switches
         document.querySelectorAll('.theme-toggle-switch').forEach(function(btn) {
             btn.removeEventListener('click', toggleTheme);
-            btn.addEventListener('click', toggleTheme);
-        });
-
-        updateAllSwitches();
-    }
-
-    ensureHeaderSearchBar();
+            btn.addEventLis    ensureHeaderSearchBar();
     ensureThemeToggle();
 
     // ==========================================================================
     // 6. TRILINGUAL I18N TRANSLATION ENGINE (ES 🇦🇷 / EN 🇺🇸 / PT 🇧🇷)
     // ==========================================================================
+    function ensureHeaderLanguageSwitcher() {
+        var langSwitcherHTML = '<div class="lang-switcher-container">' +
+            '<span class="lang-option es-option active" data-lang="es" title="Español"><span class="lang-flag">🇦🇷</span></span>' +
+            '<span class="lang-divider">|</span>' +
+            '<span class="lang-option en-option" data-lang="en" title="English"><span class="lang-flag">🇺🇸</span></span>' +
+            '<span class="lang-divider">|</span>' +
+            '<span class="lang-option pt-option" data-lang="pt" title="Português"><span class="lang-flag">🇧🇷</span></span>' +
+            '</div>';
+
+        var menus = document.querySelectorAll('.elementor-nav-menu--main .elementor-nav-menu, .elementor-nav-menu--dropdown .elementor-nav-menu');
+        menus.forEach(function(menu) {
+            if (!menu.querySelector('.menu-item-lang-wrapper')) {
+                var langLi = document.createElement('li');
+                langLi.className = 'menu-item menu-item-lang-wrapper';
+                langLi.innerHTML = langSwitcherHTML;
+                var searchItem = menu.querySelector('.menu-item-search-wrapper');
+                if (searchItem && searchItem.nextSibling) {
+                    menu.insertBefore(langLi, searchItem.nextSibling);
+                } else {
+                    menu.appendChild(langLi);
+                }
+            }
+        });
+    }
+
+    ensureHeaderLanguageSwitcher();
+
     var DICTIONARY = {
         "PRODUCTOS": { es: "PRODUCTOS", en: "PRODUCTS", pt: "PRODUTOS" },
         "RECURSOS": { es: "RECURSOS", en: "RESOURCES", pt: "RECURSOS" },
@@ -548,12 +569,32 @@ document.addEventListener('DOMContentLoaded', function() {
             pt: "Mais de 20 Anos Oferecendo Soluções de Monitoramento de Alta Qualidade e um Serviço Excepcional aos Nossos Valiosos Clientes."
         },
         "Lee más": { es: "Lee más", en: "Read more", pt: "Leia mais" },
-        "Conoce más": { es: "Conoce más", en: "Learn more", pt: "Saiba mais" }
+        "Conoce más": { es: "Conoce más", en: "Learn more", pt: "Saiba mais" },
+
+        // Subpages Common Elements
+        "Inicio": { es: "Inicio", en: "Home", pt: "Início" },
+        "Descargar PDF": { es: "Descargar PDF", en: "Download PDF", pt: "Baixar PDF" },
+        "Solicitar Demo": { es: "Solicitar Demo", en: "Request Demo", pt: "Solicitar Demonstração" },
+        "Ver Soluciones": { es: "Ver Soluciones", en: "View Solutions", pt: "Ver Soluções" },
+        "Volver": { es: "Volver", en: "Back", pt: "Voltar" },
+        "Buscador": { es: "Buscador", en: "Search", pt: "Buscador" },
+        "Monitoreo y Auditoría de Medios": { es: "Monitoreo y Auditoría de Medios", en: "Media Monitoring and Auditing", pt: "Monitoramento e Auditoria de Mídia" },
+        "Soluciones para Radio y Televisión": { es: "Soluciones para Radio y Televisión", en: "Solutions for Radio and Television", pt: "Soluções para Rádio e Televisão" },
+        "Descarga de Folletos y Documentación Técnica": { es: "Descarga de Folletos y Documentación Técnica", en: "Download Brochures and Technical Documentation", pt: "Download de Brochuras e Documentação Técnica" },
+        "Calcule el espacio de almacenamiento necesario para sus grabaciones de radio y TV.": {
+            es: "Calcule el espacio de almacenamiento necesario para sus grabaciones de radio y TV.",
+            en: "Calculate required storage space for your radio and TV recordings.",
+            pt: "Calcule o espaço de armazenamento necessário para suas gravações de rádio e TV."
+        },
+        "Nuestra Historia": { es: "Nuestra Historia", en: "Our Story", pt: "Nossa História" },
+        "Sobre 3Way Solutions": { es: "Sobre 3Way Solutions", en: "About 3Way Solutions", pt: "Sobre a 3Way Solutions" }
     };
 
     function applyLanguage(lang) {
         localStorage.setItem('3way_lang', lang);
         document.documentElement.setAttribute('lang', lang === 'en' ? 'en-US' : (lang === 'pt' ? 'pt-BR' : 'es-AR'));
+
+        ensureHeaderLanguageSwitcher();
 
         // Update active class on flag options
         document.querySelectorAll('.lang-option').forEach(function(opt) {
@@ -592,6 +633,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function initLanguageSwitcher() {
+        ensureHeaderLanguageSwitcher();
         var currentLang = localStorage.getItem('3way_lang') || 'es';
         applyLanguage(currentLang);
 
