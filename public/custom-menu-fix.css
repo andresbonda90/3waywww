@@ -504,73 +504,83 @@ footer.elementor-location-footer .elementor-icon-list-item a:hover {
     }
 }
 
-/* MODERN 3D COVERFLOW CAROUSEL FOR NUESTRAS SOLUCIONES */
+/* MODERN PRESENTATION SHOWCASE SLIDER FOR NUESTRAS SOLUCIONES */
 .custom-coverflow-slider-section {
-    padding: 50px 0 !important;
+    padding: 30px 0 50px 0 !important;
     position: relative !important;
     text-align: center !important;
     background: transparent !important;
-    overflow: hidden !important;
+    max-width: 1050px !important;
+    margin: 0 auto !important;
 }
 
 .custom-slider-title {
     font-size: 32px !important;
     font-weight: 800 !important;
-    color: #4A84AC !important;
-    margin-bottom: 30px !important;
+    color: #38bdf8 !important;
+    margin-bottom: 25px !important;
+    text-shadow: 0 2px 10px rgba(56, 189, 248, 0.2) !important;
+}
+
+body:not(.dark-mode) .custom-slider-title {
+    color: #0284c7 !important;
 }
 
 .custom-coverflow-container {
     position: relative !important;
-    max-width: 1200px !important;
+    width: 100% !important;
     margin: 0 auto !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 0 40px !important;
+    padding: 0 60px !important;
+    box-sizing: border-box !important;
 }
 
 .custom-coverflow-viewport {
     width: 100% !important;
     overflow: hidden !important;
-    padding: 30px 0 !important;
+    padding: 10px 0 !important;
+    border-radius: 16px !important;
 }
 
 .custom-coverflow-track {
     display: flex !important;
     align-items: center !important;
-    justify-content: center !important;
     transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1) !important;
+    width: 100% !important;
 }
 
 .custom-coverflow-slide {
-    flex: 0 0 65% !important;
-    max-width: 780px !important;
-    border-radius: 16px !important;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 14px !important;
     overflow: hidden !important;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3) !important;
-    transition: all 0.45s cubic-bezier(0.25, 1, 0.5, 1) !important;
-    opacity: 0.45 !important;
-    filter: blur(5px) grayscale(30%) !important;
-    transform: scale(0.85) !important;
-    cursor: pointer !important;
-    margin: 0 -6% !important;
+    box-sizing: border-box !important;
+    transition: opacity 0.3s ease, transform 0.3s ease !important;
+    opacity: 0.25 !important;
+    transform: scale(0.96) !important;
     user-select: none !important;
+    padding: 0 4px !important;
 }
 
 .custom-coverflow-slide.active {
     opacity: 1 !important;
-    filter: none !important;
-    transform: scale(1.06) !important;
-    z-index: 10 !important;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.15) !important;
+    transform: scale(1) !important;
+    z-index: 5 !important;
 }
 
 .custom-coverflow-slide img {
     width: 100% !important;
     height: auto !important;
     display: block !important;
-    border-radius: 16px !important;
+    border-radius: 14px !important;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.12) !important;
+}
+
+body:not(.dark-mode) .custom-coverflow-slide img {
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.08) !important;
 }
 
 /* Modern Glassmorphic Nav Buttons */
