@@ -587,6 +587,11 @@ document.addEventListener('DOMContentLoaded', function() {
         "Monitoreo y Auditoría de Medios": { es: "Monitoreo y Auditoría de Medios", en: "Media Monitoring and Auditing", pt: "Monitoramento e Auditoria de Mídia" },
         "Soluciones para Radio y Televisión": { es: "Soluciones para Radio y Televisión", en: "Solutions for Radio and Television", pt: "Soluções para Rádio e Televisão" },
         "Descarga de Folletos y Documentación Técnica": { es: "Descarga de Folletos y Documentación Técnica", en: "Download Brochures and Technical Documentation", pt: "Download de Brochuras e Documentação Técnica" },
+        "Descargar en PDF (Presentación Completa 3Way)": {
+            es: "Descargar en PDF (Presentación Completa 3Way)",
+            en: "Download PDF (Full 3Way Presentation)",
+            pt: "Baixar em PDF (Apresentação Completa 3Way)"
+        },
         "Calcule el espacio de almacenamiento necesario para sus grabaciones de radio y TV.": {
             es: "Calcule el espacio de almacenamiento necesario para sus grabaciones de radio y TV.",
             en: "Calculate required storage space for your radio and TV recordings.",
@@ -601,6 +606,18 @@ document.addEventListener('DOMContentLoaded', function() {
         document.documentElement.setAttribute('lang', lang === 'en' ? 'en-US' : (lang === 'pt' ? 'pt-BR' : 'es-AR'));
 
         ensureHeaderLanguageSwitcher();
+
+        // Update PDF Links for Language (ES / EN / PT)
+        var pdfLinks = document.querySelectorAll('a[href*=".pdf"], a.custom-pdf-btn');
+        pdfLinks.forEach(function(link) {
+            if (lang === 'en') {
+                link.href = "/wp-content/uploads/Presentation-3Way-Ingles.pdf";
+            } else if (lang === 'pt') {
+                link.href = "/wp-content/uploads/Presentacion-3Way-Portugues.pdf";
+            } else {
+                link.href = "/wp-content/uploads/Presentation-3Way-Espanol.pdf";
+            }
+        });
 
         // Update active class on flag options
         document.querySelectorAll('.lang-option').forEach(function(opt) {
