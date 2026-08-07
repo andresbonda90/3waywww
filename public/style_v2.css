@@ -336,7 +336,8 @@ body .site-header .dropdown a:hover {
 
 /* Clients */
 .clients-section {
-    background: var(--bg-alt);
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-color);
     overflow: hidden;
 }
 .clients-marquee {
@@ -364,18 +365,17 @@ body .site-header .dropdown a:hover {
     100% { transform: translateX(calc(-50% - 30px)); }
 }
 .client-logo {
-    width: 200px;
-    height: 100px;
+    width: 220px;
+    height: 110px;
     object-fit: contain;
-    opacity: 0.7;
+    opacity: 0.6;
     filter: grayscale(100%);
-    mix-blend-mode: multiply;
     transition: all 0.3s ease;
 }
 .client-logo:hover {
     opacity: 1;
     filter: grayscale(0%);
-    transform: scale(1.1);
+    transform: scale(1.15);
 }
 
 /* News & Notes */
