@@ -514,3 +514,243 @@ body .site-header .dropdown a:hover {
     section { padding: 60px 0; }
     .section-title { font-size: 2.2rem; }
 }
+
+/* =========================================
+   CATALOG V2 - ULTRA PREMIUM REDESIGN
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+.catalog-v2 {
+    font-family: 'Outfit', sans-serif;
+    background: #050505;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+.catalog-v2 h1, .catalog-v2 h2, .catalog-v2 h3, .catalog-v2 h4 {
+    font-family: 'Outfit', sans-serif;
+}
+
+.catalog-v2-hero {
+    position: relative;
+    padding: 160px 5% 100px;
+    text-align: center;
+    background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #050505 60%);
+    overflow: hidden;
+}
+.catalog-v2-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.05"/></svg>');
+    pointer-events: none;
+    z-index: 0;
+}
+.catalog-v2-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.catalog-v2-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: #818cf8;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+}
+.catalog-v2-hero h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    background: linear-gradient(to right, #fff, #a5b4fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.catalog-v2-hero p {
+    font-size: 1.3rem;
+    color: #94a3b8;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+.catalog-v2-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    color: #fff !important;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.4);
+    border: none;
+}
+.catalog-v2-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(79, 70, 229, 0.6);
+}
+.catalog-v2-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff !important;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+    margin-left: 15px;
+    backdrop-filter: blur(10px);
+}
+.catalog-v2-btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-3px);
+}
+
+.catalog-v2-dashboard-preview {
+    margin-top: 60px;
+    position: relative;
+    z-index: 2;
+    padding: 0 5%;
+}
+.catalog-v2-dashboard-preview img {
+    border-radius: 16px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.1);
+    width: 100%;
+    max-width: 1000px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Glassmorphism Section */
+.catalog-v2-section {
+    padding: 120px 5%;
+    position: relative;
+}
+.catalog-v2-section-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #fff;
+}
+.catalog-v2-section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #94a3b8;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.catalog-v2-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.catalog-v2-glass-card {
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 40px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+}
+.catalog-v2-glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 4px;
+    background: linear-gradient(90deg, #4f46e5, #ec4899);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.catalog-v2-glass-card:hover {
+    transform: translateY(-10px);
+    background: rgba(30, 41, 59, 0.7);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+.catalog-v2-glass-card:hover::before {
+    opacity: 1;
+}
+.glass-icon {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+    display: inline-block;
+}
+.catalog-v2-glass-card h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #fff;
+}
+.catalog-v2-glass-card p {
+    color: #94a3b8;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+/* Security / On-Premise Section */
+.catalog-v2-security {
+    background: #0a0a0a;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 5%;
+}
+.catalog-v2-security-text {
+    flex: 1;
+    text-align: left;
+}
+.catalog-v2-security-text h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    background: linear-gradient(to right, #10b981, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.catalog-v2-security-text p {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    margin-bottom: 24px;
+    line-height: 1.7;
+}
+.catalog-v2-security-image {
+    flex: 1;
+    position: relative;
+}
+.catalog-v2-security-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(16, 185, 129, 0.2);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+@media (max-width: 992px) {
+    .catalog-v2-security { flex-direction: column; }
+    .catalog-v2-hero h1 { font-size: 3rem; }
+    .catalog-v2-btn-secondary { margin-left: 0; margin-top: 15px; }
+}
