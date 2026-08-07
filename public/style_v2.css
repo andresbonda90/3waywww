@@ -364,11 +364,12 @@ body .site-header .dropdown a:hover {
     100% { transform: translateX(calc(-50% - 30px)); }
 }
 .client-logo {
-    width: 160px;
-    height: 80px;
+    width: 200px;
+    height: 100px;
     object-fit: contain;
-    opacity: 0.6;
+    opacity: 0.7;
     filter: grayscale(100%);
+    mix-blend-mode: multiply;
     transition: all 0.3s ease;
 }
 .client-logo:hover {
