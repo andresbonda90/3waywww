@@ -1,5 +1,5 @@
 $port = 8080
-$root = "C:\Users\gmass\.gemini\antigravity-ide\scratch\3way-clone\public"
+$root = Join-Path $PSScriptRoot "public"
 $listener = New-Object System.Net.HttpListener
 $listener.Prefixes.Add("http://localhost:$port/")
 $listener.Start()
@@ -43,6 +43,7 @@ try {
                 $response.OutputStream.Write($content, 0, $content.Length)
             } catch {
                 $response.StatusCode = 500
+                Write-Host "500 ERROR for $($filePath): $($_.Exception.Message)" -ForegroundColor Red
             }
         } else {
             $response.StatusCode = 404

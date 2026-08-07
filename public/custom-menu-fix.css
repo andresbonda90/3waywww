@@ -1201,4 +1201,115 @@ body.dark-mode .elementor-button-link:hover {
     color: #ffffff !important;
     transform: translateY(-2px) !important;
     box-shadow: 0 0 20px rgba(56, 189, 248, 0.5), 0 6px 18px rgba(37, 99, 235, 0.45) !important;
+}/* Fix for Swiper Slider Navigation */
+.elementor-swiper-button {
+    z-index: 100 !important;
+    pointer-events: auto !important;
+}
+.swiper-pagination {
+    z-index: 100 !important;
+    pointer-events: auto !important;
+}
+/* Ensure background images are perfectly centered */
+.swiper-slide-bg {
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* ==========================================================================
+   CUSTOM SLIDER STYLES
+   ========================================================================== */
+.custom-hero-slider {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+.custom-hero-slider .swiper-slide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.custom-hero-slider .slide-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+.custom-hero-slider .slide-bg::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(20, 21, 32, 0.2); /* Lighter overlay so images look bright */
+}
+.custom-hero-slider .slide-link-wrapper {
+    position: relative;
+    z-index: 2;
+    text-decoration: none;
+    color: white;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+}
+.custom-hero-slider .slide-link-wrapper.no-hover {
+    cursor: default;
+}
+.custom-hero-slider .slide-content {
+    background: rgba(15, 23, 42, 0.7);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+.custom-hero-slider .slide-link-wrapper:not(.no-hover):hover .slide-content {
+    transform: translateY(-5px);
+    background: rgba(15, 23, 42, 0.9);
+    border-color: #3b82f6;
+}
+.custom-hero-slider .slide-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: 500;
+}
+.custom-hero-slider .slide-btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background: #3b82f6;
+    color: white;
+    border-radius: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+.custom-hero-slider .slide-link-wrapper:not(.no-hover):hover .slide-btn {
+    background: #2563eb;
+}
+.custom-hero-slider .custom-swiper-btn {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+.custom-hero-slider .custom-swiper-pagination .swiper-pagination-bullet {
+    background: white;
+    opacity: 0.5;
+}
+.custom-hero-slider .custom-swiper-pagination .swiper-pagination-bullet-active {
+    background: #3b82f6;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .custom-hero-slider { height: 400px; }
+    .custom-hero-slider .slide-content p { font-size: 1rem; }
 }

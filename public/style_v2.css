@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* LIGHT MODE PALETTE */
+    --bg-page: #ffffff;
+    --bg-alt: #f8fafc;
+    --bg-card: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --accent: #38bdf8;
+    --border-color: rgba(0, 0, 0, 0.08);
+    
+    --header-height: 85px;
+    --font-main: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-main);
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+.section-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 3.5rem; /* Increased margin significantly for more breathing room */
+    color: #0f172a;
+}
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+}
+
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+section:not(.elementor-section) {
+    padding: 60px 0;
+}
+
+/* Fix for inner Elementor pages being hidden under the fixed header */
+.elementor-location-single, 
+.elementor-location-archive, 
+.elementor-type-wp-post, 
+.elementor-type-wp-page, 
+main {
+    margin-top: var(--header-height);
+}
+
+/* Header */
+.site-header {
+    height: var(--header-height);
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: #0f172a; /* Dark blue */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.logo img {
+    height: 45px;
+    width: auto;
+    /* Since the original logo was white, let's invert it for light mode if it's white.
+       Wait, the URL was LOGO-COLOR-Y-BLANCO-02.png. It has color. Let's see if it needs filter */
+}
+body .site-header .main-nav > ul {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+body .site-header .main-nav > ul > li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+body .site-header .main-nav a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #e2e8f0; /* Light gray/white */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+body .site-header .main-nav a:hover {
+    color: var(--accent);
+}
+body .site-header .has-dropdown {
+    position: relative;
+}
+body .site-header .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%; /* Sits exactly at the bottom of the li which spans the header height */
+    left: 0;
+    background: #ffffff;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    min-width: 240px;
+    padding: 12px 0 !important;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    z-index: 1050;
+    flex-direction: column; /* Force vertical just in case */
+    margin: 0 !important;
+}
+body .site-header .has-dropdown:hover .dropdown {
+    display: flex;
+    animation: fadeIn 0.2s ease;
+}
+body .site-header .dropdown li {
+    width: 100%;
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+body .site-header .dropdown a {
+    display: block;
+    padding: 10px 24px !important;
+    color: var(--text-main) !important;
+    text-transform: none !important;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+body .site-header .dropdown a:hover {
+    background: var(--bg-alt) !important;
+    color: var(--primary) !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero Slider */
+.hero-slider {
+    padding: 0 !important;
+    margin-top: var(--header-height);
+    height: calc(100vh - var(--header-height));
+    min-height: 550px;
+    position: relative;
+}
+.hero-slider .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+.slide-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+.slide-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 100%);
+    /* Keep a dark overlay on the slider images so the white text on them is still readable! */
+}
+.slide-content-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 40px;
+}
+.slide-content {
+    max-width: 650px;
+}
+.slide-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 24px;
+    color: #ffffff; /* Explicitly white for slider */
+}
+.slide-content p {
+    font-size: 1.25rem;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 35px;
+    line-height: 1.7;
+}
+.btn-primary {
+    display: inline-block;
+    padding: 14px 36px;
+    background: var(--primary);
+    color: #fff !important;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 1rem;
+}
+.btn-primary:hover {
+    background: var(--primary-hover);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Products Grid */
+.products-section {
+    background-color: var(--bg-alt); /* Light gray for contrast */
+}
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+.product-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 40px 30px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border-color: var(--primary);
+}
+.product-icon {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 25px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+.product-card:hover .product-icon {
+    transform: scale(1.1);
+}
+.product-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+.product-card p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    flex-grow: 1;
+}
+
+/* Modules Grid */
+.modules-section {
+    background: var(--bg-page);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 35px;
+}
+.module-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 24px;
+    background: var(--bg-alt);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+.module-item:hover {
+    border-color: var(--primary);
+    background: #ffffff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+}
+.module-item img {
+    width: 45px;
+    height: 45px;
+    /* Removed the invert(1) so they remain black on light background */
+}
+.module-item span {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-main);
+}
+
+/* Clients */
+.clients-section {
+    background: var(--bg-alt);
+}
+.clients-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+    align-items: center;
+}
+.client-logo {
+    width: 140px;
+    opacity: 0.5;
+    filter: grayscale(100%) opacity(0.7);
+    transition: all 0.3s ease;
+}
+.client-logo:hover {
+    opacity: 1;
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.05);
+}
+
+/* News & Notes */
+.news-section {
+    background: #ffffff;
+}
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+.news-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+.news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+.news-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid var(--border-color);
+}
+.news-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.news-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    color: var(--text-main);
+}
+.read-more {
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.news-card:hover .read-more {
+    color: var(--primary-hover);
+}
+
+/* Footer (Compact & Modern with Social Networks) */
+.site-footer {
+    background: #0f172a;
+    padding: 24px 0;
+    color: #f8fafc;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer-compact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+.footer-logo {
+    height: 30px;
+    width: auto;
+    display: block;
+}
+.footer-copy {
+    color: #94a3b8;
+    font-size: 0.88rem;
+}
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.footer-socials a {
+    color: #94a3b8;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.25s ease;
+}
+.footer-socials a:hover {
+    color: #ffffff;
+    background: #2563eb;
+    border-color: #2563eb;
+    transform: translateY(-2px);
+}
+@media (max-width: 768px) {
+    .footer-compact {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-left {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Swiper Overrides */
+.swiper-button-next, .swiper-button-prev {
+    color: rgba(255,255,255,0.8) !important;
+}
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    color: #ffffff !important;
+}
+.swiper-pagination-bullet {
+    background: rgba(255,255,255,0.5) !important;
+}
+.swiper-pagination-bullet-active {
+    background: var(--primary) !important;
+}
+
+@media (max-width: 768px) {
+    .slide-content h2 { font-size: 2.2rem; }
+    .main-nav { display: none; }
+    section { padding: 60px 0; }
+    .section-title { font-size: 2.2rem; }
+}
