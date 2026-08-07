@@ -337,24 +337,44 @@ body .site-header .dropdown a:hover {
 /* Clients */
 .clients-section {
     background: var(--bg-alt);
+    overflow: hidden;
 }
-.clients-grid {
+.clients-marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    /* Optional mask to fade edges for a polished look */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+.clients-track {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 60px;
+    width: max-content;
+    animation: scroll-clients 45s linear infinite;
     align-items: center;
+    gap: 60px;
+    padding: 20px 0;
+}
+.clients-track:hover {
+    animation-play-state: paused;
+}
+@keyframes scroll-clients {
+    0% { transform: translateX(0); }
+    /* Moves by exactly half the total width plus half a gap */
+    100% { transform: translateX(calc(-50% - 30px)); }
 }
 .client-logo {
-    width: 140px;
-    opacity: 0.5;
-    filter: grayscale(100%) opacity(0.7);
+    width: 160px;
+    height: 80px;
+    object-fit: contain;
+    opacity: 0.6;
+    filter: grayscale(100%);
     transition: all 0.3s ease;
 }
 .client-logo:hover {
     opacity: 1;
-    filter: grayscale(0%) opacity(1);
-    transform: scale(1.05);
+    filter: grayscale(0%);
+    transform: scale(1.1);
 }
 
 /* News & Notes */
