@@ -525,6 +525,8 @@ body .site-header .dropdown a:hover {
     background: #f8fafc;
     color: #1e293b;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 .catalog-v2 h1, .catalog-v2 h2, .catalog-v2 h3, .catalog-v2 h4 {
     font-family: 'Outfit', sans-serif;
@@ -536,6 +538,7 @@ body .site-header .dropdown a:hover {
     text-align: center;
     background: radial-gradient(circle at 50% 0%, #e0e7ff 0%, #f8fafc 60%);
     overflow: hidden;
+    margin-top: 0 !important;
 }
 .catalog-v2-hero::before {
     content: '';
@@ -715,12 +718,15 @@ body .site-header .dropdown a:hover {
     background: #ffffff;
     border-top: 1px solid #e2e8f0;
     border-bottom: 1px solid #e2e8f0;
+    padding: 100px 5%;
+    width: 100%;
+}
+.catalog-v2-security-inner {
     display: flex;
     align-items: center;
     gap: 60px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 100px 5%;
 }
 .catalog-v2-security-text {
     flex: 1;
@@ -752,7 +758,7 @@ body .site-header .dropdown a:hover {
 }
 
 @media (max-width: 992px) {
-    .catalog-v2-security { flex-direction: column; }
+    .catalog-v2-security-inner { flex-direction: column; }
     .catalog-v2-hero h1 { font-size: 3rem; }
     .catalog-v2-btn-secondary { margin-left: 0; margin-top: 15px; }
 }
