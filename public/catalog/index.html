@@ -553,7 +553,7 @@ gtag("config", "GT-WBZNCSFL");
             <h1>Gestión inteligente de activos multimedia</h1>
             <p>ViDeus Catalog es el Media Asset Management definitivo. Automatiza la catalogación, transforma horas de video en metadata buscable y mantén el 100% del control con nuestra arquitectura On-Premise.</p>
             <div>
-                <a href="#contacto" class="catalog-v2-btn-primary">Solicitar Demo</a>
+                <a href="javascript:void(0)" onclick="openDemoModal()" class="catalog-v2-btn-primary">Solicitar Demo</a>
                 <a href="#como-funciona" class="catalog-v2-btn-secondary">Descubrir cómo funciona</a>
             </div>
         </div>
@@ -650,6 +650,31 @@ gtag("config", "GT-WBZNCSFL");
             </div>
         </div>
     </section>
+
+    <!-- Demo Modal -->
+    <div id="demoModal" class="demo-modal-overlay" style="display: none;">
+        <div class="demo-modal-container">
+            <button class="demo-modal-close" onclick="closeDemoModal()">&times;</button>
+            <h3 class="demo-modal-title">Solicitar Demo de ViDeus Catalog</h3>
+            <p class="demo-modal-subtitle">Completá tus datos y nos pondremos en contacto.</p>
+            <form id="demoForm" onsubmit="submitDemoForm(event)">
+                <div class="demo-form-group">
+                    <label for="demoName">Nombre completo</label>
+                    <input type="text" id="demoName" required placeholder="Ej: Juan Pérez">
+                </div>
+                <div class="demo-form-group">
+                    <label for="demoEmail">Correo electrónico</label>
+                    <input type="email" id="demoEmail" required placeholder="tu@empresa.com">
+                </div>
+                <div class="demo-form-group demo-captcha-group">
+                    <label for="demoCaptcha" id="demoCaptchaLabel">¿Cuánto es X + Y?</label>
+                    <input type="number" id="demoCaptcha" required placeholder="Respuesta">
+                </div>
+                <button type="submit" class="catalog-v2-btn-primary" id="demoSubmitBtn" style="width: 100%; margin-top: 10px;">Enviar Solicitud</button>
+                <p id="demoStatusMessage" class="demo-status-message"></p>
+            </form>
+        </div>
+    </div>
 </main>
 				        <footer class="site-footer">
             <div class="container footer-compact">
@@ -962,7 +987,7 @@ var ElementorProFrontendConfig = {"ajaxurl":"\/wp-admin\/admin-ajax.php","nonce"
 </script>
 <script id="elementor-pro-frontend-js" src="/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.35.1"></script>
 <script id="pro-elements-handlers-js" src="/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.35.1"></script>
-
+<script src="/catalog-modal.js"></script>
 </body>
 </html>
 <!--
