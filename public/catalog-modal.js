@@ -3,7 +3,7 @@ let captchaAnswer = 0;
 
 // URL del Webhook de Google Apps Script
 // IMPORTANTE: REEMPLAZAR ESTO CON LA URL QUE TE DIO GOOGLE APPS SCRIPT
-const GOOGLE_SCRIPT_URL = "REEMPLAZAR_CON_TU_URL_DE_APPS_SCRIPT";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby1Is_vvjF8wijpZ94jxPBSaDGNyS2QpS0oPf7OneSalzpNOS1i3JoXrQVkYixwuKeCvQ/exec";
 
 function generateCaptcha() {
     const num1 = Math.floor(Math.random() * 10) + 1;
