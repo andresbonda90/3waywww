@@ -88,11 +88,11 @@ main {
 
 /* Header */
 .site-header {
-    height: var(--header-height);
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 1000;
-    background: #0f172a; /* Dark blue */
+    height: var(--header-height) !important;
+    position: fixed !important;
+    top: 0 !important; left: 0 !important; right: 0 !important;
+    z-index: 1000 !important;
+    background: #0f172a !important; /* Dark blue */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
@@ -534,7 +534,7 @@ body .site-header .dropdown a:hover {
 
 .catalog-v2-hero {
     position: relative;
-    padding: 160px 5% 100px;
+    padding: 190px 5% 100px;
     text-align: center;
     background: radial-gradient(circle at 50% 0%, #e0e7ff 0%, #f8fafc 60%);
     overflow: hidden;
@@ -630,13 +630,78 @@ body .site-header .dropdown a:hover {
     z-index: 2;
     padding: 0 5%;
 }
-.catalog-v2-dashboard-preview img {
-    border-radius: 16px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.05);
-    width: 100%;
+.monitor-wrapper {
     max-width: 1000px;
-    display: block;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+.monitor-frame {
+    background: #e2e8f0;
+    padding: 12px 12px 45px 12px;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255,255,255,0.8);
+    position: relative;
+}
+.monitor-frame::after {
+    content: '';
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 25px;
+    background: #94a3b8;
+    border-radius: 50%;
+}
+.monitor-screen {
+    background: #000;
+    padding: 4px;
+    border-radius: 8px;
+}
+.monitor-screen img {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+.monitor-stand {
+    width: 140px;
+    height: 50px;
+    background: linear-gradient(to bottom, #cbd5e1, #94a3b8);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+.monitor-base {
+    width: 300px;
+    height: 12px;
+    background: #cbd5e1;
+    margin: 0 auto;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), inset 0 2px 4px rgba(255,255,255,0.5);
+    position: relative;
+    z-index: 2;
+}
+@media (max-width: 768px) {
+    .monitor-frame {
+        padding: 8px 8px 30px 8px;
+        border-radius: 12px;
+    }
+    .monitor-frame::after {
+        width: 15px;
+        height: 15px;
+        bottom: 8px;
+    }
+    .monitor-stand {
+        width: 80px;
+        height: 30px;
+    }
+    .monitor-base {
+        width: 160px;
+        height: 8px;
+    }
 }
 
 /* Glassmorphism Section */
@@ -665,6 +730,20 @@ body .site-header .dropdown a:hover {
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
+}
+.catalog-v2-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1400px;
+}
+@media (max-width: 1200px) {
+    .catalog-v2-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .catalog-v2-grid-4 {
+        grid-template-columns: 1fr;
+    }
 }
 .catalog-v2-glass-card {
     background: rgba(255, 255, 255, 0.7);
@@ -730,7 +809,9 @@ body .site-header .dropdown a:hover {
 }
 .catalog-v2-security-text {
     flex: 1;
-    text-align: left;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
 }
 .catalog-v2-security-text h2 {
     font-size: 2.8rem;
@@ -746,16 +827,7 @@ body .site-header .dropdown a:hover {
     margin-bottom: 24px;
     line-height: 1.7;
 }
-.catalog-v2-security-image {
-    flex: 1;
-    position: relative;
-}
-.catalog-v2-security-image img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(16, 185, 129, 0.15);
-    border: 1px solid rgba(16, 185, 129, 0.2);
-}
+
 
 @media (max-width: 992px) {
     .catalog-v2-security-inner { flex-direction: column; }
