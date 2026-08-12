@@ -547,7 +547,7 @@ gtag("config", "GT-WBZNCSFL");
 </header>
 <main class="catalog-v2">
     <!-- Vintage TV Promo Banner -->
-    <section class="catalog-v2-promo-banner" style="padding-top: 160px;">
+    <section class="catalog-v2-promo-banner" style="display: none; padding-top: 160px;">
         <div class="catalog-v2-promo-content">
             <div class="catalog-v2-promo-badge">
                 <span class="badge-text">NOVEDAD</span>
@@ -560,7 +560,7 @@ gtag("config", "GT-WBZNCSFL");
     </section>
 
     <!-- Hero Section -->
-    <section class="catalog-v2-hero" style="padding-top: 100px !important;">
+    <section class="catalog-v2-hero" style="padding-top: 200px !important;">
         <div class="catalog-v2-hero-content">
             <div class="catalog-v2-badge">Powered by On-Premise AI &bull; Multilenguaje</div>
             <h1>Gestión inteligente de activos multimedia</h1>
@@ -570,38 +570,30 @@ gtag("config", "GT-WBZNCSFL");
                 <a href="#como-funciona" class="catalog-v2-btn-secondary">Descubrir cómo funciona</a>
             </div>
         </div>
-        
-        <div class="catalog-v2-dashboard-preview">
-            <div class="monitor-wrapper">
-                <div class="monitor-frame">
-                    <div class="monitor-screen">
-                        <img src="/wp-content/uploads/2026/05/catalog.png" alt="ViDeus Catalog Interface" />
-                    </div>
-                </div>
-                <div class="monitor-stand"></div>
-                <div class="monitor-base"></div>
-            </div>
-        </div>
     </section>
 
     <!-- On-Premise Advantage -->
     <section class="catalog-v2-security">
         <div class="catalog-v2-security-inner">
-            <div class="catalog-v2-security-text">
+            <div class="catalog-v2-security-text" style="text-align: left; margin: 0;">
                 <h2>Toda la potencia de la IA, dentro de tu infraestructura.</h2>
                 <p>Mientras otras plataformas te obligan a subir petabytes de video a la nube, ViDeus procesa <strong>todo localmente</strong>. Tus datos y los modelos de Inteligencia Artificial corren en tus propios servidores o en hardware dedicado.</p>
                 <p>Esto garantiza control total sobre tu propiedad intelectual sin riesgo de fugas, y <strong>costos fijos predecibles</strong> sin sorpresas por consumo de ancho de banda o procesamiento cloud.</p>
+            </div>
+            
+            <div class="catalog-v2-security-image" style="flex: 1; display: flex; justify-content: flex-end; align-items: center;">
+                <img src="/wp-content/uploads/hero_monitor_transparent.png" alt="ViDeus Catalog Desktop App" style="width: 100%; max-width: 600px; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));" />
             </div>
         </div>
     </section>
 
     <!-- Glassmorphism Pipeline -->
-    <section id="como-funciona" class="catalog-v2-section" style="background: #f1f5f9;">
-        <h2 class="catalog-v2-section-title">Flujo de Trabajo Automatizado</h2>
+    <section id="como-funciona" class="catalog-v2-section" style="background: #f1f5f9; scroll-margin-top: 90px;">
+        <h2 class="catalog-v2-section-title" style="scroll-margin-top: 120px;">Flujo de Trabajo Automatizado</h2>
         <p class="catalog-v2-section-subtitle">Desde la ingesta hasta la recuperación, todo el pipeline está integrado en una sola plataforma, potenciada por IA en cada paso.</p>
         
-        <div style="text-align: center; margin-bottom: 50px;">
-            <img src="/wp-content/uploads/2026/05/workflow-ia.png" alt="Diagrama de Flujo de Trabajo IA" style="display: block; margin: 0 auto; max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.05);">
+        <div style="max-width: 1200px; margin: 0 auto 50px auto; text-align: center;">
+            <img src="/wp-content/uploads/workflow-ia-v2.png" alt="Diagrama de Flujo de Trabajo IA" style="display: block; width: 100%; height: auto; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.05);">
         </div>
 
         <div class="catalog-v2-grid">
@@ -628,46 +620,86 @@ gtag("config", "GT-WBZNCSFL");
         <h2 class="catalog-v2-section-title">Módulos de Inteligencia Artificial</h2>
         <p class="catalog-v2-section-subtitle">Nuestra plataforma cuenta con motores analíticos que extraen información con una precisión inigualable, ejecutados 100% on-premise.</p>
         
-        <div class="catalog-v2-grid catalog-v2-grid-4">
-            <div class="catalog-v2-glass-card">
-                <span class="glass-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#f8fafc"/><path d="M24 20a4 4 0 100-8 4 4 0 000 8z" fill="#ffffff" stroke="#3b82f6" stroke-width="2.5"/><path d="M14 34c0-4.4 4.5-8 10-8s10 3.6 10 8" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/></svg></span>
-                <h3>Rostros (Facial Recognition)</h3>
-                <p>Detección automática de personas en las señales de televisión y streamings. Fundamental para encontrar apariciones de figuras públicas en segundos.</p>
+        <!-- Row 1: Faces & People (Image Left) -->
+        <div class="ai-feature-row">
+            <div class="ai-feature-image">
+                <img src="/wp-content/uploads/ai_faces.png" alt="Reconocimiento de Rostros" />
             </div>
-            <div class="catalog-v2-glass-card">
-                <span class="glass-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#f8fafc"/><rect x="12" y="16" width="24" height="16" rx="2" fill="#ffffff" stroke="#0f172a" stroke-width="2.5"/><path d="M18 10l6 6 6-6" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/><path d="M16 24h16" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/></svg></span>
-                <h3>Publicidades (Fingerprint)</h3>
-                <p>Utiliza la tecnología más moderna para detección automática de anuncios y clips. Permite tener informes instantáneos de pautas publicitarias propias y de la competencia.</p>
+            <div class="ai-feature-content">
+                <div class="ai-feature-item">
+                    <span class="glass-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#f8fafc"/><path d="M24 20a4 4 0 100-8 4 4 0 000 8z" fill="#ffffff" stroke="#3b82f6" stroke-width="2.5"/><path d="M14 34c0-4.4 4.5-8 10-8s10 3.6 10 8" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/></svg></span>
+                    <div>
+                        <h3>Rostros (Facial Recognition)</h3>
+                        <p>Detección automática de personas en las señales de televisión y streamings. Fundamental para encontrar apariciones de figuras públicas en segundos.</p>
+                    </div>
+                </div>
+                <div class="ai-feature-item">
+                    <span class="glass-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#f8fafc"/><rect x="12" y="16" width="24" height="16" rx="2" fill="#ffffff" stroke="#0f172a" stroke-width="2.5"/><path d="M18 10l6 6 6-6" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/><path d="M16 24h16" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/></svg></span>
+                    <div>
+                        <h3>Publicidades (Fingerprint)</h3>
+                        <p>Utiliza la tecnología más moderna para detección automática de anuncios y clips. Permite tener informes instantáneos de pautas publicitarias propias y de la competencia.</p>
+                    </div>
+                </div>
+                <div class="ai-feature-item">
+                    <span class="glass-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#f8fafc"/><rect x="20" y="14" width="8" height="14" rx="4" fill="#ffffff" stroke="#3b82f6" stroke-width="2.5"/><path d="M14 24c0 6 4.5 9 10 9s10-3 10-9" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/><path d="M24 33v5M20 38h8" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/></svg></span>
+                    <div>
+                        <h3>Speakers (Diarization)</h3>
+                        <p>Identificación automática y precisa de quién está hablando en transmisiones de radio o televisión, aplicable tanto en vivo como en archivado.</p>
+                    </div>
+                </div>
             </div>
-            <div class="catalog-v2-glass-card">
-                <span class="glass-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#f8fafc"/><rect x="20" y="14" width="8" height="14" rx="4" fill="#ffffff" stroke="#3b82f6" stroke-width="2.5"/><path d="M14 24c0 6 4.5 9 10 9s10-3 10-9" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/><path d="M24 33v5M20 38h8" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/></svg></span>
-                <h3>Speakers (Diarization)</h3>
-                <p>Identificación automática y precisa de quién está hablando en transmisiones de radio o televisión, aplicable tanto en vivo como en archivado.</p>
+        </div>
+
+        <!-- Row 2: Audio & Semantic (Image Right) -->
+        <div class="ai-feature-row reverse">
+            <div class="ai-feature-image">
+                <img src="/wp-content/uploads/ai_audio.png" alt="Transcripción de Audio a Texto" />
             </div>
-            <div class="catalog-v2-glass-card">
-                <span class="glass-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#f8fafc"/><path d="M12 34l6-6h16a2 2 0 002-2V14a2 2 0 00-2-2H14a2 2 0 00-2 2v20z" fill="#ffffff" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 20h12M18 26h8" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/></svg></span>
-                <h3>Audio a Texto (Speech-to-Text)</h3>
-                <p>Indexa el texto extraído del audio como metadata sincronizada temporalmente con el video, habilitando búsquedas hiperprecisas por frase exacta.</p>
+            <div class="ai-feature-content">
+                <div class="ai-feature-item">
+                    <span class="glass-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#f8fafc"/><path d="M12 34l6-6h16a2 2 0 002-2V14a2 2 0 00-2-2H14a2 2 0 00-2 2v20z" fill="#ffffff" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 20h12M18 26h8" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/></svg></span>
+                    <div>
+                        <h3>Audio a Texto (Speech-to-Text)</h3>
+                        <p>Indexa el texto extraído del audio como metadata sincronizada temporalmente con el video, habilitando búsquedas hiperprecisas por frase exacta.</p>
+                    </div>
+                </div>
+                <div class="ai-feature-item">
+                    <span class="glass-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#f8fafc"/><rect x="14" y="14" width="20" height="20" rx="4" fill="#ffffff" stroke="#0f172a" stroke-width="2.5"/><circle cx="24" cy="24" r="5" stroke="#3b82f6" stroke-width="2.5"/></svg></span>
+                    <div>
+                        <h3>Logos (Brand Detection)</h3>
+                        <p>Detecta automáticamente imágenes y logotipos de empresas en señales de televisión. Indispensable para auditoría de exposición de marcas y patrocinadores.</p>
+                    </div>
+                </div>
+                <div class="ai-feature-item">
+                    <span class="glass-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#f8fafc"/><path d="M24 14c-4-4-10-2-10 4 0 3 2 5 2 8 0 4-2 6-2 8s4 4 8 2M24 14c4-4 10-2 10 4 0 3-2 5-2 8 0 4 2 6 2 8s-4 4-8 2" fill="#ffffff" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 14v22" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/></svg></span>
+                    <div>
+                        <h3>LLM (Análisis Semántico)</h3>
+                        <p>A partir de la transcripción, la IA identifica y clasifica automáticamente la aparición de temáticas o tópicos de interés predefinidos, entendiendo el contexto.</p>
+                    </div>
+                </div>
             </div>
-            <div class="catalog-v2-glass-card">
-                <span class="glass-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#f8fafc"/><rect x="14" y="14" width="20" height="20" rx="4" fill="#ffffff" stroke="#0f172a" stroke-width="2.5"/><circle cx="24" cy="24" r="5" stroke="#3b82f6" stroke-width="2.5"/></svg></span>
-                <h3>Logos (Brand Detection)</h3>
-                <p>Detecta automáticamente imágenes y logotipos de empresas en señales de televisión. Indispensable para auditoría de exposición de marcas y patrocinadores.</p>
+        </div>
+
+        <!-- Row 3: OCR & VLM (Image Left) -->
+        <div class="ai-feature-row">
+            <div class="ai-feature-image">
+                <img src="/wp-content/uploads/ai_report.png" alt="Reporte Editorial en Celular" style="max-width: 240px;" />
             </div>
-            <div class="catalog-v2-glass-card">
-                <span class="glass-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#f8fafc"/><path d="M24 14c-4-4-10-2-10 4 0 3 2 5 2 8 0 4-2 6-2 8s4 4 8 2M24 14c4-4 10-2 10 4 0 3-2 5-2 8 0 4 2 6 2 8s-4 4-8 2" fill="#ffffff" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 14v22" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/></svg></span>
-                <h3>LLM (Análisis Semántico)</h3>
-                <p>A partir de la transcripción, la IA identifica y clasifica automáticamente la aparición de temáticas o tópicos de interés predefinidos, entendiendo el contexto.</p>
-            </div>
-            <div class="catalog-v2-glass-card">
-                <span class="glass-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#f8fafc"/><path d="M10 24c4-7 10-10 14-10s10 3 14 10c-4 7-10 10-14 10s-10-3-14-10z" fill="#ffffff" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="24" r="4" fill="#3b82f6"/></svg></span>
-                <h3>OCR (Reconocimiento Óptico)</h3>
-                <p>Indexa los textos que figuran en el video, como zócalos informativos o banners, para permitir búsquedas directas sobre el texto en pantalla.</p>
-            </div>
-            <div class="catalog-v2-glass-card">
-                <span class="glass-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#f8fafc"/><rect x="12" y="14" width="24" height="20" rx="2" fill="#ffffff" stroke="#0f172a" stroke-width="2.5"/><path d="M12 28l6-6 12 12" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="28" cy="20" r="2" fill="#3b82f6"/></svg></span>
-                <h3>VLM (Scene Understanding)</h3>
-                <p>Generación Automática de Descripciones. El modelo de visión-lenguaje lee la imagen y redacta un texto explicativo de la escena en milisegundos.</p>
+            <div class="ai-feature-content">
+                <div class="ai-feature-item">
+                    <span class="glass-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#f8fafc"/><path d="M10 24c4-7 10-10 14-10s10 3 14 10c-4 7-10 10-14 10s-10-3-14-10z" fill="#ffffff" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="24" r="4" fill="#3b82f6"/></svg></span>
+                    <div>
+                        <h3>OCR (Reconocimiento Óptico)</h3>
+                        <p>Indexa los textos que figuran en el video, como zócalos informativos o banners, para permitir búsquedas directas sobre el texto en pantalla.</p>
+                    </div>
+                </div>
+                <div class="ai-feature-item">
+                    <span class="glass-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#f8fafc"/><rect x="12" y="14" width="24" height="20" rx="2" fill="#ffffff" stroke="#0f172a" stroke-width="2.5"/><path d="M12 28l6-6 12 12" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="28" cy="20" r="2" fill="#3b82f6"/></svg></span>
+                    <div>
+                        <h3>VLM (Scene Understanding)</h3>
+                        <p>Generación Automática de Descripciones. El modelo de visión-lenguaje lee la imagen y redacta un texto explicativo de la escena en milisegundos.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
