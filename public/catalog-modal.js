@@ -5,6 +5,8 @@ let captchaAnswer = 0;
 // IMPORTANTE: REEMPLAZAR ESTO CON LA URL QUE TE DIO GOOGLE APPS SCRIPT
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby1Is_vvjF8wijpZ94jxPBSaDGNyS2QpS0oPf7OneSalzpNOS1i3JoXrQVkYixwuKeCvQ/exec";
 
+let currentProduct = 'Catalog';
+
 function generateCaptcha() {
     const num1 = Math.floor(Math.random() * 10) + 1;
     const num2 = Math.floor(Math.random() * 10) + 1;
@@ -13,9 +15,17 @@ function generateCaptcha() {
     document.getElementById('demoCaptcha').value = '';
 }
 
-function openDemoModal() {
+function openDemoModal(productName = 'Catalog') {
+    currentProduct = productName;
     const modal = document.getElementById('demoModal');
     modal.style.display = 'flex';
+    
+    // Update title based on product
+    const titleElement = modal.querySelector('.demo-modal-title');
+    if (titleElement) {
+        titleElement.innerText = `Solicitar Demo de ViDeus ${productName}`;
+    }
+
     // Forzar reflow para la transición de opacidad
     modal.offsetHeight; 
     modal.classList.add('active');
@@ -61,7 +71,7 @@ async function submitDemoForm(event) {
     const formData = new URLSearchParams();
     formData.append('nombre', name);
     formData.append('email', email);
-    formData.append('producto', 'Catalog'); // Identificador para la columna del Excel
+    formData.append('producto', currentProduct); // Identificador dinámico para la columna del Excel
 
     // Cambiar estado del botón
     submitBtn.innerText = 'Enviando...';

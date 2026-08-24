@@ -1,0 +1,292 @@
+/* PREMIUM STYLES FOR HOME & NEWS - MAGAZINE EDITION */
+
+body, .elementor-text-editor, p {
+    color: #4a4a4a !important;
+    line-height: 1.7 !important;
+    font-family: 'Open Sans', 'Roboto', 'Inter', sans-serif !important;
+}
+
+/* 2. Premium News Cards (.elementor-post__card) - Magazine Aesthetic */
+/* SEPARATED COMPACT WHITE CARDS FOR CASOS DE ÉXITO */
+.elementor-posts-container.elementor-posts--skin-cards {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 22px !important;
+    align-items: stretch !important;
+}
+
+.elementor-posts-container.elementor-posts--skin-cards .elementor-post {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.elementor-posts-container.elementor-posts--skin-cards .elementor-post__card {
+    background: #ffffff !important;
+    border-radius: 10px !important;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.elementor-posts-container.elementor-posts--skin-cards .elementor-post__card:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22) !important;
+}
+
+/* Card Image Header */
+.elementor-posts-container.elementor-posts--skin-cards .elementor-post__thumbnail__link {
+    display: block !important;
+    width: 100% !important;
+    height: 140px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    background: #ffffff !important;
+}
+
+.elementor-posts-container.elementor-posts--skin-cards .elementor-post__thumbnail {
+    width: 100% !important;
+    height: 100% !important;
+    position: relative !important;
+    background: #ffffff !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    aspect-ratio: auto !important;
+}
+
+.elementor-posts-container.elementor-posts--skin-cards .elementor-post__thumbnail img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    background: #ffffff !important;
+    transition: transform 0.5s ease !important;
+}
+
+.elementor-posts-container.elementor-posts--skin-cards .elementor-post__card:hover .elementor-post__thumbnail img {
+    transform: scale(1.06) !important;
+}
+
+/* Novedad Badge */
+.elementor-posts-container.elementor-posts--skin-cards .elementor-post__thumbnail::after {
+    content: "NOVEDAD" !important;
+    position: absolute !important;
+    top: 10px !important;
+    left: 10px !important;
+    background: #004b7a !important;
+    color: #ffffff !important;
+    padding: 3px 8px !important;
+    font-size: 9px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    border-radius: 12px !important;
+    z-index: 10 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2) !important;
+}
+
+/* Card Text Body */
+.elementor-posts-container.elementor-posts--skin-cards .elementor-post__text {
+    padding: 16px 16px 18px 16px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+    justify-content: space-between !important;
+    background: #ffffff !important;
+    text-align: center !important;
+}
+
+/* Card Title */
+.elementor-posts-container.elementor-posts--skin-cards .elementor-post__title {
+    font-size: 14.5px !important;
+    font-weight: 700 !important;
+    color: #2c364c !important;
+    line-height: 1.35 !important;
+    margin: 0 0 12px 0 !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.elementor-posts-container.elementor-posts--skin-cards .elementor-post__title a {
+    color: #2c364c !important;
+    text-decoration: none !important;
+}
+
+.elementor-posts-container.elementor-posts--skin-cards .elementor-post__card:hover .elementor-post__title a {
+    color: #0073aa !important;
+}
+
+/* LEER MÁS >> Link */
+.elementor-posts-container.elementor-posts--skin-cards .elementor-post__read-more {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: #d4a017 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.8px !important;
+    text-decoration: none !important;
+    margin-top: auto !important;
+    display: inline-block !important;
+}
+
+.elementor-posts-container.elementor-posts--skin-cards .elementor-post__read-more:hover {
+    color: #b5860e !important;
+}
+
+@media (max-width: 1024px) {
+    .elementor-posts-container.elementor-posts--skin-cards {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+@media (max-width: 600px) {
+    .elementor-posts-container.elementor-posts--skin-cards {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ICON ANIMATION & COLOR FOR MODULOS ADICIONALES */
+.elementor-element-601f2a03 .elementor-widget-image a,
+.elementor-element-51f60bb .elementor-widget-image a,
+.elementor-element-601f2a03 .elementor-widget-image img,
+.elementor-element-51f60bb .elementor-widget-image img {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease !important;
+    display: inline-block !important;
+}
+
+body:not(.dark-mode) .elementor-element-601f2a03 .elementor-widget-image img,
+body:not(.dark-mode) .elementor-element-51f60bb .elementor-widget-image img {
+    filter: brightness(0) saturate(100%) invert(60%) sepia(90%) saturate(1500%) hue-rotate(170deg) drop-shadow(0 4px 10px rgba(56, 189, 248, 0.25)) !important;
+}
+
+body.dark-mode .elementor-element-601f2a03 .elementor-widget-image img,
+body.dark-mode .elementor-element-51f60bb .elementor-widget-image img {
+    filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(255, 255, 255, 0.75)) !important;
+}
+
+body:not(.dark-mode) .elementor-element-601f2a03 .elementor-column:hover .elementor-widget-image img,
+body:not(.dark-mode) .elementor-element-51f60bb .elementor-column:hover .elementor-widget-image img {
+    transform: translateY(-8px) scale(1.15) !important;
+    filter: brightness(0) saturate(100%) invert(50%) sepia(95%) saturate(2000%) hue-rotate(170deg) drop-shadow(0 6px 14px rgba(56, 189, 248, 0.5)) !important;
+}
+
+body.dark-mode .elementor-element-601f2a03 .elementor-column:hover .elementor-widget-image img,
+body.dark-mode .elementor-element-51f60bb .elementor-column:hover .elementor-widget-image img {
+    transform: translateY(-8px) scale(1.15) !important;
+    filter: brightness(0) invert(1) drop-shadow(0 0 16px rgba(56, 189, 248, 1)) !important;
+}
+
+.elementor-element-601f2a03 .elementor-column:hover .elementor-heading-title a,
+.elementor-element-51f60bb .elementor-column:hover .elementor-heading-title a {
+    color: #0073aa !important;
+    transition: color 0.3s ease !important;
+}
+
+/* HEADER SEARCH BAR STYLING */
+.menu-item-search-wrapper {
+    display: inline-flex !important;
+    align-items: center !important;
+    margin-left: 14px !important;
+    position: relative !important;
+}
+
+.menu-item-search-wrapper::after,
+.menu-item-search-wrapper::before,
+.nav-search-form::after,
+.nav-search-form::before,
+.nav-search-button::after,
+.nav-search-button::before,
+.nav-search-button,
+.nav-search-button * {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.nav-search-form {
+    display: flex !important;
+    align-items: center !important;
+    position: relative !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.nav-search-input {
+    padding: 7px 34px 7px 14px !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    outline: none !important;
+    transition: all 0.25s ease !important;
+    width: 120px !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+}
+
+.nav-search-input::placeholder {
+    color: rgba(255, 255, 255, 0.65) !important;
+    font-weight: 400 !important;
+}
+
+.nav-search-input:focus,
+.nav-search-input:not(:placeholder-shown) {
+    width: 165px !important;
+    background: rgba(255, 255, 255, 0.16) !important;
+    border-color: rgba(0, 208, 132, 0.6) !important;
+    box-shadow: 0 0 0 3px rgba(0, 208, 132, 0.15) !important;
+}
+
+.nav-search-button {
+    position: absolute !important;
+    right: 8px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: transparent !important;
+    border: none !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    outline: none !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    line-height: 1 !important;
+}
+
+.nav-search-button:hover {
+    color: #ffffff !important;
+}
+
+.nav-search-button svg {
+    display: block !important;
+}
+
+@media (max-width: 1024px) {
+    .menu-item-search-wrapper {
+        margin: 12px 15px !important;
+        width: calc(100% - 30px) !important;
+    }
+    .nav-search-form, .nav-search-input {
+        width: 100% !important;
+    }
+    .nav-search-input:focus {
+        width: 100% !important;
+    }
+}
+
