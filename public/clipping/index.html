@@ -612,167 +612,80 @@ gtag("config", "GT-WBZNCSFL");
     </div>
   </section>
 
-  <!-- 3. FLUJO DE TRABAJO -->
-  <section class="workflow-section" id="como-funciona">
-    <div class="container">
-      <h2 class="section-title">De la emisión al clip en pocos pasos</h2>
+  <!-- OTT DRM SECTION -->
+  <section class="ott-drm-section" style="padding: 5rem 0; position: relative; overflow: hidden;">
+    <style>
+      .ott-drm-section .btn-primary:hover {
+        background-color: #b91c1c !important;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(220, 38, 38, 0.3) !important;
+      }
+      @media (max-width: 768px) {
+        .ott-drm-section .container {
+          flex-direction: column;
+          text-align: center;
+        }
+        .ott-drm-section .ott-drm-text {
+          margin: 0 auto;
+        }
+      }
+    </style>
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between; gap: 4rem; flex-wrap: wrap;">
       
-      <div class="workflow-steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h3>GRABÁ</h3>
-          <p>Capturá señales de TV, radio, streaming, SDI, IP y OTT.</p>
-        </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h3>ENCONTRÁ</h3>
-          <p>Elegí señal, fecha y hora. Encontrá contenido mediante búsqueda indexada.</p>
-        </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h3>RECORTÁ</h3>
-          <p>Marcá IN y OUT mientras el contenido continúa grabándose.</p>
-        </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <h3>EDITÁ</h3>
-          <p>Prepará el clip, metadata y opciones del flujo de publicación.</p>
-        </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <div class="step-num">5</div>
-          <h3>PUBLICÁ</h3>
-          <p>Descargá el archivo o envialo hacia los destinos configurados.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. VELOCIDAD -->
-  <section class="speed-section">
-    <div class="container">
-      <h2 class="section-title">Publicá antes que tu competencia</h2>
-      <p class="section-desc">Cuando el formato y el flujo lo permiten, ViDeus puede extraer el segmento directamente del material grabado, evitando procesos innecesarios de edición y reencoding.</p>
-
-      
-      <div class="speed-comparison">
-        <div class="comparison-row traditional">
-          <h4>Flujo tradicional</h4>
-          <div class="timeline">
-            <span>Emisión</span><span class="arr">></span>
-            <span>Grabación</span><span class="arr">></span>
-            <span>Copiar archivo</span><span class="arr">></span>
-            <span>Editor</span><span class="arr">></span>
-            <span>Editar</span><span class="arr">></span>
-            <span>Renderizar</span><span class="arr">></span>
-            <span class="highlight">Exportar</span>
-          </div>
-        </div>
-        <div class="comparison-row videus">
-          <h4>ViDeus Clipping</h4>
-          <div class="timeline">
-            <span>Emisión</span><span class="arr">></span>
-            <span>Grabación continua</span><span class="arr">></span>
-            <span>IN / OUT</span><span class="arr">></span>
-            <span class="highlight-fast">Clip Listo</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. BÚSQUEDA E IA -->
-  <section class="ai-search-section">
-    <div class="container split-layout">
-      <div class="ai-content">
-        <h2 class="section-title text-left">Encontrá el momento que buscás sin revisar horas de video</h2>
-        <p>Integración de ViDeus con herramientas de análisis e indexación potenciadas por Inteligencia Artificial.</p>
+      <!-- Image Content -->
+      <div class="ott-drm-graphic" style="flex: 1; min-width: 300px; position: relative; text-align: center;">
+        <!-- Cyan glow background -->
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 140%; height: 140%; background: radial-gradient(circle, rgba(34,211,238,0.15) 0%, rgba(255,255,255,0) 70%); z-index: 0;"></div>
         
-        <div class="search-example">
-          <div class="search-bar">
-            <span>🔍 Milei hablando sobre inflación</span>
-          </div>
-          <ul class="search-results">
-            <li><strong>TN</strong> — 12:43:21 <button class="btn btn-sm">VER</button> <button class="btn btn-sm btn-primary">CREAR CLIP</button></li>
-            <li><strong>LN+</strong> — 14:07:32 <button class="btn btn-sm">VER</button> <button class="btn btn-sm btn-primary">CREAR CLIP</button></li>
-            <li><strong>A24</strong> — 17:51:09 <button class="btn btn-sm">VER</button> <button class="btn btn-sm btn-primary">CREAR CLIP</button></li>
-          </ul>
-        </div>
-        
-        <div class="ai-capabilities">
-          <h4>Módulos Complementarios:</h4>
-          <ul>
-            <li>Speech-to-Text</li>
-            <li>OCR</li>
-            <li>Reconocimiento facial</li>
-            <li>Detección de logos</li>
-            <li>Named Entity Recognition</li>
-            <li>Auto Highlight</li>
-            <li>Catalogación e indexación</li>
-          </ul>
-        </div>
+        <!-- Placeholder for the actual image from the mockup -->
+        <img src="/wp-content/uploads/plataformas_ott.png" alt="Recepción Directa De Streaming OTT Con DRM" style="width: 100%; max-width: 600px; height: auto; position: relative; z-index: 1;" onerror="this.src='https://via.placeholder.com/600x500/f8fafc/94a3b8?text=Colocar+Imagen+Aqui'">
       </div>
-      <div class="ai-visual">
-        <img src="/wp-content/uploads/2026/08/videus_clipping_search_real.png" alt="Resultados de Búsqueda de IA" class="shadow-lg">
+
+      <!-- Text Content -->
+      <div class="ott-drm-text" style="flex: 1; min-width: 300px; max-width: 550px;">
+        <span class="new-feature-badge">✨ NUEVA FUNCIONALIDAD</span>
+        <h2 style="font-size: 2.2rem; font-weight: 700; line-height: 1.2; margin-bottom: 1.5rem; color: #1e293b;">
+          Recepción directa de<br>Streaming OTT con DRM
+        </h2>
+        <p style="font-size: 1.15rem; margin-bottom: 1rem; line-height: 1.5; color: #475569;">
+          Recibí y monitoreá señales de TV en vivo directamente desde plataformas OTT, incluso contenidos protegidos con DRM.
+        </p>
+        <p style="font-size: 1.15rem; margin-bottom: 1rem; line-height: 1.5; color: #475569;">
+          La plataforma accede al streaming desde su origen digital, sin necesidad de decodificadores, set-top boxes ni hardware de recepción dedicado por canal.
+        </p>
+        <p style="font-size: 1.15rem; margin-bottom: 2rem; font-weight: 600; color: #1e293b;">
+          Menos equipos. Menos infraestructura. Una integración más simple.
+        </p>
+        <a href="#contacto" class="btn btn-primary" style="background-color: #dc2626; color: white; padding: 0.8rem 1.8rem; font-size: 1rem; font-weight: 600; border-radius: 6px; text-decoration: none; display: inline-block; transition: all 0.3s; box-shadow: 0 4px 6px rgba(220, 38, 38, 0.2);">
+          Conoce más de esta solución aquí
+        </a>
       </div>
+
     </div>
   </section>
 
-  <!-- 6. INTERFAZ -->
-  <section class="interface-section">
-    <div class="container text-center">
-      <h2 class="section-title">Una interfaz diseñada para trabajar rápido</h2>
-      <div class="interface-wrapper">
-        <img src="/wp-content/uploads/2026/08/videus_clipping_hero_real.png" alt="Interfaz ViDeus" class="interface-image shadow-lg">
-        <div class="interface-overlay">
-          <!-- Labels can be absolutely positioned with CSS later -->
-        </div>
-      </div>
-      <div class="interface-steps-list">
-        <span>1. Elegí la señal</span>
-        <span>2. Buscá fecha y hora</span>
-        <span>3. Navegá el contenido</span>
-        <span>4. Marcá IN / OUT</span>
-        <span>5. Agregá metadata</span>
-        <span>6. Generá o publicá</span>
-      </div>
-    </div>
-  </section>
+
+
+
+
+
+
+
 
   <!-- 7. FUNCIONALIDADES DESTACADAS -->
   <section class="features-section" id="funcionalidades">
     <div class="container">
-      <h2 class="section-title">Funcionalidades Destacadas</h2>
+      <h2 class="section-title">Todo el proceso de clipping, en una sola plataforma</h2>
       <div class="features-grid">
-        <div class="feature-card"><h3>Clipping durante grabación</h3><p>Realización de clips en vivo mientras está grabando de manera continua, sin cortes ni desfasaje.</p></div>
-        <div class="feature-card"><h3>Operación 100% web</h3><p>Operación remota desde interfaz web con previsualización. No requiere instalar plugins.</p></div>
-        <div class="feature-card"><h3>Proxy para operación remota</h3><p>Generación de copia proxy para optimizar ancho de banda en la red.</p></div>
-        <div class="feature-card"><h3>Metadata</h3><p>Generación de información asociada al video para catalogación rápida.</p></div>
-        <div class="feature-card"><h3>Exportación de audio</h3><p>Soporte para exportación de sólo audio de emisiones.</p></div>
-        <div class="feature-card"><h3>Watermark</h3><p>Sobreimpresión de marca de agua para las extracciones de video.</p></div>
-        <div class="feature-card"><h3>Integración con storage</h3><p>Exportación a repositorios externos FTP, Windows folder, NFS.</p></div>
-        <div class="feature-card"><h3>Integración con Playout</h3><p>Exportación directa a sistemas de Playout en formatos nativos (ej. XDCAM).</p></div>
-        <div class="feature-card"><h3>Operación multiusuario</h3><p>Sin limitación de licencias por usuario, perfiles configurables.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8. CASOS DE USO -->
-  <section class="usecases-section" id="casos-de-uso">
-    <div class="container">
-      <h2 class="section-title">Una plataforma para equipos que necesitan reaccionar rápido</h2>
-      <div class="usecases-grid">
-        <div class="usecase-item"><strong>Canales de TV:</strong> noticias, entrevistas y programas convertidos rápidamente en clips.</div>
-        <div class="usecase-item"><strong>Radios:</strong> entrevistas, columnas y momentos para web y redes.</div>
-        <div class="usecase-item"><strong>Agencias de clipping:</strong> múltiples señales y múltiples clientes.</div>
-        <div class="usecase-item"><strong>Organismos públicos:</strong> registrar, localizar y recuperar emisiones.</div>
-        <div class="usecase-item"><strong>Productoras:</strong> acceso al material sin depender de una isla de edición.</div>
-        <div class="usecase-item"><strong>OTT / Streaming:</strong> trabajo directo con señales IP.</div>
-        <div class="usecase-item"><strong>Deportes:</strong> generación rápida de jugadas y entrevistas; integración con Auto Highlight.</div>
-        <div class="usecase-item"><strong>Podcasts:</strong> fragmentos reutilizables a partir de programas completos.</div>
+        <div class="feature-card"><i class="fas fa-cut feature-icon"></i><h3>Clipping inmediato de TV en vivo</h3><p>Navegación visual sobre la señal grabada, selección de puntos IN/OUT y creación de clips en segundos.</p></div>
+        <div class="feature-card"><i class="fas fa-brain feature-icon"></i><h3>IA para entender el contenido</h3><p>Speech-to-Text automático, detección de entidades y personas, y generación automática de títulos, categorías, etiquetas y descripciones.</p></div>
+        <div class="feature-card"><i class="fas fa-search feature-icon"></i><h3>Búsqueda inteligente sobre lo emitido</h3><p>Encontrá rápidamente personas, marcas, temas o palabras dentro de grandes volúmenes de programación.</p></div>
+        <div class="feature-card"><i class="fas fa-share-alt feature-icon"></i><h3>Exportación y publicación multiformato</h3><p>Generación de clips en MP4, diferentes resoluciones y calidades, preparados para TV, web, redes sociales y otras plataformas digitales.</p></div>
+        <div class="feature-card"><i class="fas fa-crop-alt feature-icon"></i><h3>Personalización y adaptación para publicación</h3><p>Incorporación de logos y marcas de agua, adaptación a diferentes relaciones de aspecto —horizontal, vertical o cuadrado— y generación de clips con subtítulos quemados.</p></div>
+        <div class="feature-card"><i class="fas fa-history feature-icon"></i><h3>Monitoreo y archivo 24/7</h3><p>Grabación continua de múltiples canales para volver atrás, buscar, visualizar, recortar y recuperar cualquier contenido emitido.</p></div>
+        <div class="feature-card"><i class="fas fa-users feature-icon"></i><h3>Usuarios ilimitados</h3><p>Sin límite de licencias por usuario. Periodistas, productores, editores y operadores pueden trabajar simultáneamente sobre la misma plataforma.</p></div>
+        <div class="feature-card"><i class="fas fa-plug feature-icon"></i><h3>API e integración con otros sistemas</h3><p>API para integrar ViDeus Clipping con CMS, MAM, sistemas de noticias, automatización y otras plataformas del cliente.</p></div>
+        <div class="feature-card"><i class="fas fa-bolt feature-icon"></i><h3>Extracción directa sin reencoding</h3><p>Cuando el formato y el flujo lo permiten, ViDeus extrae el segmento directamente del material grabado, sin procesos innecesarios de edición o reencoding, acelerando la generación del clip y permitiendo publicar más rápido.</p></div>
       </div>
     </div>
   </section>
@@ -780,129 +693,148 @@ gtag("config", "GT-WBZNCSFL");
   <!-- 9. FUENTES Y FORMATOS -->
   <section class="formats-section" id="formatos">
     <div class="container text-center">
-      <h2 class="section-title">Compatible con infraestructuras broadcast e IP</h2>
-      <div class="formats-pills">
-        <div class="format-category">
-          <h4>Banda Base</h4>
-          <div class="pills"><span>SDI</span><span>HD-SDI</span><span>3G-SDI</span><span>HDMI</span><span>NTSC</span><span>PAL</span><span>RF</span></div>
-        </div>
-        <div class="format-category">
-          <h4>IP / Streaming</h4>
-          <div class="pills"><span>SRT</span><span>NDI</span><span>HLS</span><span>RTMP</span><span>RTSP</span><span>MPEG-DASH</span><span>TS over IP</span></div>
-        </div>
-        <div class="format-category">
-          <h4>Broadcast</h4>
-          <div class="pills"><span>ASI</span><span>DVB-S2</span><span>DVB-C</span><span>ISDBT</span><span>ATSC</span><span>DVB-T2</span><span>AM/FM/IBOC</span></div>
-        </div>
-        <div class="format-category">
-          <h4>Codecs y Contenedores</h4>
-          <div class="pills"><span>H.264</span><span>HEVC</span><span>XDCAM</span><span>AVI</span><span>TS</span><span>MP4</span><span>MOV</span><span>MXF</span><span>DV</span><span>XAVC</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 10. INTEGRACIONES -->
-  <section class="integrations-section">
-    <div class="container text-center">
-      <h2 class="section-title">Integralo a tu flujo de trabajo</h2>
-      <div class="integrations-diagram">
-        <div class="inputs">TV / RADIO / SDI / NDI / SRT / OTT</div>
-        <div class="arrow">↓</div>
-        <div class="core-product">ViDeus Clipping</div>
-        <div class="arrow">↓</div>
-        <div class="outputs-grid">
-          <div class="output-node">STORAGE</div>
-          <div class="output-node">PLAYOUT</div>
-          <div class="output-node">PUBLICACIÓN</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 11. y 12. SEGURIDAD Y ESPECIFICACIONES -->
-  <section class="specs-section" id="especificaciones">
-    <div class="container">
-      <h2 class="section-title">Preparado para entornos profesionales</h2>
+      <h2 class="section-title">Recibí señales desde cualquier fuente</h2>
       
-      <div class="accordion-container">
-        <details class="accordion">
-          <summary>Seguridad y Administración</summary>
-          <div class="accordion-content">
-            <ul>
-              <li>Robusto sistema de gestión de usuarios, grupos y permisos.</li>
-              <li>Permisos por funcionalidad y por contenido.</li>
-              <li>Acceso a través de usuario y clave con seguridad HTTPS.</li>
-              <li>Integración con LDAP/OAUTH (Active Directory).</li>
-              <li>Registro de actividad de cada usuario (auditoría de log).</li>
-              <li>Operación remota segura.</li>
-            </ul>
+      <div class="formats-table-wrapper">
+        <!-- Top Row -->
+        <div class="formats-row">
+          <div class="format-card card-base">
+            <div class="format-header">BANDA BASE</div>
+            <div class="format-body">
+              <ul class="format-list top-list">
+                <li>SDI</li><li>HD-SDI</li><li>3G-SDI</li><li>HDMI</li><li>NTSC</li><li>PAL</li><li>RF</li>
+              </ul>
+            </div>
           </div>
-        </details>
-
-        <details class="accordion">
-          <summary>Sistema Operativo y Arquitectura</summary>
-          <div class="accordion-content">
-            <ul>
-              <li>Sistema Operativo CentOS Stream 9.</li>
-              <li>Base de datos MySQL.</li>
-              <li>Firewall integrado.</li>
-              <li>Soporte HTTP/HTTPS.</li>
-              <li>Sincronización de Fecha/Hora con NTP o Nettime.</li>
-              <li>Sistema de actualización de software de forma remota.</li>
-              <li>Full Uptime! Sistema preparado para funcionar 24x7 sin interrupciones.</li>
-            </ul>
+          <div class="format-card card-ip">
+            <div class="format-header">IP / STREAMING</div>
+            <div class="format-body">
+              <ul class="format-list top-list">
+                <li>SRT</li><li>NDI</li><li>HLS</li><li>RTMP</li><li>RTSP</li><li>MPEG-DASH</li><li>TS over IP</li>
+              </ul>
+            </div>
           </div>
-        </details>
-
-        <details class="accordion">
-          <summary>Video y Procesamiento</summary>
-          <div class="accordion-content">
-            <ul>
-              <li>Grabación en H264/HEVC High Profile.</li>
-              <li>Grabación Nativa en XDCAM YUV422P 50 o 100Mbps.</li>
-              <li>Encoding/Decoding por CPU o con aceleración por hardware CUDA (Nvidia Quadro Family).</li>
-            </ul>
+          <div class="format-card card-broadcast">
+            <div class="format-header">BROADCAST</div>
+            <div class="format-body">
+              <ul class="format-list top-list">
+                <li>ASI</li><li>DVB-S2</li><li>DVB-C</li><li>ISDBT</li><li>ATSC</li><li>DVB-T2</li><li>AM-FM</li><li>SMPTE 2110</li><li>SMPTE 2022-6</li>
+              </ul>
+            </div>
           </div>
-        </details>
-
-        <details class="accordion">
-          <summary>Almacenamiento (Storage)</summary>
-          <div class="accordion-content">
-            <ul>
-              <li>Sistema de archivos de almacenamiento local XFS o EXT4.</li>
-              <li>Soporte protocolos para Storage externo: FTP, CIFS, HTTP, NFS 4 y SSHFS.</li>
-            </ul>
+        </div>
+        
+        <!-- Bottom Row -->
+        <div class="formats-row">
+          <div class="format-card card-codecs" style="flex: 1;">
+            <div class="format-header">CODECS Y CONTENEDORES</div>
+            <div class="format-body">
+              <div class="codecs-columns">
+                <ul class="format-list">
+                  <li>H.264</li><li>HEVC</li><li>XDCAM</li><li style="border-bottom: none;">AVI</li>
+                </ul>
+                <ul class="format-list">
+                  <li>TS</li><li>MP4</li><li>MOV</li><li style="border-bottom: none;">MXF</li>
+                </ul>
+                <ul class="format-list">
+                  <li>DV</li><li style="border-bottom: none;">XAVC</li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </details>
+          <div class="format-card card-ott" style="flex: 1;">
+            <div class="format-header">PLATAFORMAS OTT</div>
+            <div class="format-body" style="display: flex; align-items: center;">
+              <div class="ott-columns" style="width: 100%;">
+                <ul class="format-list">
+                  <li>Disney+</li><li>HBO Max</li><li>Flow</li>
+                </ul>
+                <ul class="format-list">
+                  <li>DTV Go</li><li>YouTube</li><li>Facebook</li>
+                </ul>
+                <ul class="format-list">
+                  <li>Vimeo</li><li>Web Pages</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 13. ECOSISTEMA VIDEUS -->
-  <section class="ecosystem-section">
+  <!-- 8. CASOS DE USO -->
+  <section class="usecases-section" id="casos-de-uso">
     <div class="container">
-      <h2 class="section-title">Descubrí el Ecosistema ViDeus</h2>
-      <div class="ecosystem-grid">
-        <a href="/auto-highlight/" class="eco-card">
-          <h4>Auto Highlight</h4>
-          <p>Generación y detección automática de momentos destacados.</p>
-        </a>
-        <a href="/catalog/" class="eco-card">
-          <h4>ViDeus Catalog</h4>
-          <p>Indexación y búsqueda avanzada sobre archivos audiovisuales.</p>
-        </a>
-        <a href="/speech-to-text/" class="eco-card">
-          <h4>Speech-to-Text</h4>
-          <p>Transcripción para búsqueda y análisis avanzado.</p>
-        </a>
-        <a href="/ai-analytics/" class="eco-card">
-          <h4>OCR / Faces / Logos</h4>
-          <p>Análisis visual e identificación de contenido en tiempo real.</p>
-        </a>
+      <h2 class="section-title">¿Cómo vas a usar ViDeus?</h2>
+      <p class="section-desc">ViDeus Clipping se adapta a distintos flujos de trabajo para transformar contenido audiovisual en información lista para buscar, recortar, compartir y publicar.</p>
+      
+      <div class="usecases-modern-grid">
+        <!-- Card 1 -->
+        <div class="usecase-modern-card card-bg-1">
+          <div class="usecase-modern-overlay"></div>
+          <div class="usecase-modern-content">
+            <span class="usecase-audience">Canales de TV y Medios</span>
+            <h3>PUBLICAR MÁS RÁPIDO</h3>
+            <p>Del vivo a digital en segundos. Recortá entrevistas, noticias y momentos destacados mientras la señal continúa al aire.</p>
+
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="usecase-modern-card card-bg-2">
+          <div class="usecase-modern-overlay"></div>
+          <div class="usecase-modern-content">
+            <span class="usecase-audience">Prensa y Agencias</span>
+            <h3>ENCONTRAR QUÉ SE DIJO</h3>
+            <p>Buscá personas, temas, marcas o declaraciones dentro de múltiples señales y generá el clip inmediatamente.</p>
+
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="usecase-modern-card card-bg-3">
+          <div class="usecase-modern-overlay"></div>
+          <div class="usecase-modern-content">
+            <span class="usecase-audience">Media Intelligence y Monitoreo</span>
+            <h3>MONITOREAR MEDIOS</h3>
+            <p>Convertí horas de televisión y streaming en información. Detectá menciones, temas, personas y acontecimientos dentro de múltiples medios.</p>
+
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="usecase-modern-card card-bg-4">
+          <div class="usecase-modern-overlay"></div>
+          <div class="usecase-modern-content">
+            <span class="usecase-audience">Organismos e Instituciones</span>
+            <h3>CONSTRUIR UN ARCHIVO INTELIGENTE</h3>
+            <p>Registrá, encontrá y compartí emisiones, conferencias, sesiones y apariciones públicas desde un archivo audiovisual centralizado.</p>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Industrias secundarias -->
+      <div class="usecases-secondary">
+        <span class="secondary-title">También utilizado en:</span>
+        <div class="secondary-chips">
+          <span>Deportes</span>
+          <span>Productoras</span>
+          <span>Comunicación corporativa</span>
+          <span>Educación</span>
+          <span>Gobierno</span>
+          <span>Agencias de comunicación</span>
+        </div>
       </div>
     </div>
   </section>
+
+
+
+
+
+
 
   <!-- 14. CTA FINAL -->
   <section class="cta-final-section">
