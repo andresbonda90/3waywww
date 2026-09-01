@@ -640,44 +640,78 @@ gtag("config", "GT-WBZNCSFL");
         </div>
     </section>
 
-    <!-- FORMATOS -->
-    <section class="catalog-v2-section" style="background-color: #ffffff !important;">
-        <div class="catalog-v2-container">
-            <div class="catalog-v2-section-header catalog-v2-text-center">
-                <h2 class="catalog-v2-section-title">Formatos Soportados</h2>
-                <p class="catalog-v2-section-subtitle">Arquitectura unificada capaz de ingerir y distribuir cualquier protocolo de la industria.</p>
+  <!-- 9. FUENTES Y FORMATOS -->
+  <section class="formats-section" id="formatos" style="background-color: #ffffff; padding: 60px 0;">
+    <div class="container text-center">
+      <h2 class="section-title">Recibí señales desde cualquier fuente</h2>
+      
+      <div class="formats-table-wrapper">
+        <!-- Top Row -->
+        <div class="formats-row">
+          <div class="format-card card-base">
+            <div class="format-header">BANDA BASE</div>
+            <div class="format-body">
+              <ul class="format-list top-list">
+                <li>SDI</li><li>HD-SDI</li><li>3G-SDI</li><li>HDMI</li><li>NTSC</li><li>PAL</li><li>RF</li>
+              </ul>
             </div>
-            
-            <div style="display: flex; gap: 40px; flex-wrap: wrap; justify-content: center; margin-top: 40px;">
-                <!-- ENTRADAS -->
-                <div class="catalog-v2-card" style="flex: 1; min-width: 300px; max-width: 500px; border: 1px solid #e2e8f0; background: #ffffff;">
-                    <h3 class="catalog-v2-card-title" style="border-bottom: 2px solid #0284c7; padding-bottom: 15px; margin-bottom: 20px;">Entradas Soportadas</h3>
-                    <ul style="list-style: none; padding: 0; margin: 0; color: #475569; line-height: 2.2;">
-                        <li><span style="color: #0284c7; margin-right: 8px;">&bull;</span><strong>RF, Video Banda Base:</strong> NTSC, PAL</li>
-                        <li><span style="color: #0284c7; margin-right: 8px;">&bull;</span><strong>SDI:</strong> SD-SDI, HD-SDI 3G</li>
-                        <li><span style="color: #0284c7; margin-right: 8px;">&bull;</span><strong>HDMI</strong></li>
-                        <li><span style="color: #0284c7; margin-right: 8px;">&bull;</span><strong>TS:</strong> TS over IP, ASI, DVB-S2, DVB-C</li>
-                        <li><span style="color: #0284c7; margin-right: 8px;">&bull;</span><strong>IP OTT:</strong> HLS (incl. Akamai Token), RTMP, RTMPE, RTMPS, RTSP</li>
-                        <li><span style="color: #0284c7; margin-right: 8px;">&bull;</span><strong>Radios:</strong> AM, FM, IP (mp3, aac, ac3), IBOC</li>
-                        <li><span style="color: #0284c7; margin-right: 8px;">&bull;</span><strong>TDT:</strong> ISDBT, ATSC, DVB-T2</li>
-                        <li><span style="color: #0284c7; margin-right: 8px;">&bull;</span><strong>Otros:</strong> NDI, HEVC, SRT, MPEG-DASH</li>
-                    </ul>
-                </div>
-
-                <!-- SALIDAS -->
-                <div class="catalog-v2-card" style="flex: 1; min-width: 300px; max-width: 500px; border: 1px solid #e2e8f0; background: #ffffff;">
-                    <h3 class="catalog-v2-card-title" style="border-bottom: 2px solid #0284c7; padding-bottom: 15px; margin-bottom: 20px;">Salidas Soportadas</h3>
-                    <ul style="list-style: none; padding: 0; margin: 0; color: #475569; line-height: 2.2;">
-                        <li><span style="color: #0284c7; margin-right: 8px;">&bull;</span><strong>HDMI</strong> (Visualización Directa)</li>
-                        <li><span style="color: #0284c7; margin-right: 8px;">&bull;</span><strong>SDI</strong> (Enrutamiento baseband)</li>
-                        <li><span style="color: #0284c7; margin-right: 8px;">&bull;</span><strong>IP TS</strong> (Multicast/Unicast)</li>
-                        <li><span style="color: #0284c7; margin-right: 8px;">&bull;</span><strong>ASI</strong></li>
-                        <li><span style="color: #0284c7; margin-right: 8px;">&bull;</span><strong>IP HLS</strong> (Distribución web/OTT remota)</li>
-                    </ul>
-                </div>
+          </div>
+          <div class="format-card card-ip">
+            <div class="format-header">IP / STREAMING</div>
+            <div class="format-body">
+              <ul class="format-list top-list">
+                <li>SRT</li><li>NDI</li><li>HLS</li><li>RTMP</li><li>RTSP</li><li>MPEG-DASH</li><li>TS over IP</li>
+              </ul>
             </div>
+          </div>
+          <div class="format-card card-broadcast">
+            <div class="format-header">BROADCAST</div>
+            <div class="format-body">
+              <ul class="format-list top-list">
+                <li>ASI</li><li>DVB-S2</li><li>DVB-C</li><li>ISDBT</li><li>ATSC</li><li>DVB-T2</li><li>AM-FM</li><li>SMPTE 2110</li><li>SMPTE 2022-6</li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </section>
+        
+        <!-- Bottom Row -->
+        <div class="formats-row">
+          <div class="format-card card-codecs" style="flex: 1;">
+            <div class="format-header">CODECS Y CONTENEDORES</div>
+            <div class="format-body">
+              <div class="codecs-columns">
+                <ul class="format-list">
+                  <li>H.264</li><li>HEVC</li><li>XDCAM</li><li style="border-bottom: none;">AVI</li>
+                </ul>
+                <ul class="format-list">
+                  <li>TS</li><li>MP4</li><li>MOV</li><li style="border-bottom: none;">MXF</li>
+                </ul>
+                <ul class="format-list">
+                  <li>DV</li><li style="border-bottom: none;">XAVC</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="format-card card-ott" style="flex: 1;">
+            <div class="format-header">PLATAFORMAS OTT</div>
+            <div class="format-body" style="display: flex; align-items: center;">
+              <div class="ott-columns" style="width: 100%;">
+                <ul class="format-list">
+                  <li>Disney+</li><li>HBO Max</li><li>Flow</li>
+                </ul>
+                <ul class="format-list">
+                  <li>DTV Go</li><li>YouTube</li><li>Facebook</li>
+                </ul>
+                <ul class="format-list">
+                  <li>Vimeo</li><li>Web Pages</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
     <!-- CARACTERÍSTICAS TÉCNICAS (GRIS) -->
     <section class="catalog-v2-section" style="background-color: #f8fafc !important;">
