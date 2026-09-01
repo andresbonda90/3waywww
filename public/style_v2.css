@@ -1510,3 +1510,9 @@ html {
   .ott-columns,
   .top-list { grid-template-columns: 1fr; }
 }
+
+
+/* Benefit Card (Shared) */
+.benefit-card { background: #ffffff; padding: 2rem; border-radius: 16px; border: 1px solid #e2e8f0; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
+.benefit-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+.benefit-card .icon { width: 60px; height: 60px; margin: 0 auto 1.5rem; color: #4364F7; }
