@@ -579,9 +579,11 @@ body .site-header .dropdown a:hover {
 }
 .catalog-v2-hero h1 {
     margin-bottom: 24px;
+    font-family: 'Outfit', sans-serif !important;
 }
 .catalog-title-brand {
     display: block;
+    font-family: 'Outfit', sans-serif !important;
     font-size: 5.5rem;
     font-weight: 900;
     line-height: 1.05;
@@ -593,6 +595,7 @@ body .site-header .dropdown a:hover {
 }
 .catalog-title-sub {
     display: block;
+    font-family: 'Outfit', sans-serif !important;
     font-size: 2.2rem;
     font-weight: 700;
     line-height: 1.3;
