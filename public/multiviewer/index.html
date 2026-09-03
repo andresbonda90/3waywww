@@ -786,45 +786,132 @@ gtag("config", "GT-WBZNCSFL");
 
     </section>
 
-    <!-- CLIENTS SECTION -->
-    <section class="clients-section" style="padding-top: 60px; padding-bottom: 60px; overflow: hidden; background: #ffffff;">
-        <div class="catalog-v2-container">
-            <h2 class="catalog-v2-section-title" style="text-align: center; margin-bottom: 40px;">Quiénes usan nuestros productos de Multiviewer y Monitoreo</h2>
-            <div class="clients-marquee">
-                <div class="clients-track">
-                    <!-- Primer grupo de logos -->
-                    <img src="/wp-content/uploads/2024/01/eltrece-copy.png" alt="El Trece" class="client-logo">
-                    <img src="/wp-content/uploads/2023/12/Telecentro-gris-1.png" alt="Telecentro" class="client-logo">
-                    <img src="/wp-content/uploads/2023/12/encompass.png" alt="Encompass" class="client-logo">
-                    <img src="/wp-content/uploads/2024/01/multivision.png" alt="Multivision" class="client-logo">
-                    <img src="/wp-content/uploads/2025/08/America-TV-Peru.jpg" alt="America TV Peru" class="client-logo">
-                    <img src="/wp-content/uploads/2025/08/Artear_logo.jpeg" alt="Artear" class="client-logo">
-                    <img src="/wp-content/uploads/2025/08/claro-logo-01.jpg" alt="Claro" class="client-logo">
-                    <img src="/wp-content/uploads/2025/09/Televisa-logo-01.jpg" alt="Televisa" class="client-logo">
-                    <img src="/wp-content/uploads/2025/09/paramount-logo-01-01.jpg" alt="Paramount" class="client-logo">
-                    <img src="/wp-content/uploads/2025/09/tigo-logo-fondo-azul-01.jpg" alt="Tigo" class="client-logo">
-                    <img src="/wp-content/uploads/2025/09/canal-9-logo-01.jpg" alt="Canal 9" class="client-logo">
-                    <img src="/wp-content/uploads/2023/12/logos-clientes-02.png" alt="Cliente 2" class="client-logo">
-                    <img src="/wp-content/uploads/2023/12/logos-clientes-03.png" alt="Cliente 3" class="client-logo">
+    <!-- CASOS DE USO MULTIVIEWER -->
+    <style>
+      .videus-multiviewer-usecases .usecases-modern-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+      .videus-multiviewer-usecases .usecase-modern-card {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        min-height: 320px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        color: #ffffff;
+        text-align: left;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-size: cover;
+        background-position: center;
+        background-color: #1e293b;
+        text-decoration: none;
+      }
+      .videus-multiviewer-usecases .usecase-modern-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      }
+      .videus-multiviewer-usecases .usecase-modern-overlay {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: linear-gradient(to bottom, rgba(15,23,42,1) 0%, rgba(15,23,42,0.85) 60%, rgba(15,23,42,0.4) 100%);
+        z-index: 1;
+      }
+      .videus-multiviewer-usecases .usecase-modern-content {
+        position: relative;
+        z-index: 2;
+        padding: 1.5rem;
+      }
+      .videus-multiviewer-usecases .usecase-audience {
+        display: inline-block;
+        background-color: rgba(255,255,255,0.2);
+        backdrop-filter: blur(4px);
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #ffffff;
+      }
+      .videus-multiviewer-usecases .usecase-modern-content h3 {
+        font-size: 1.3rem;
+        font-weight: 800;
+        margin-bottom: 0.8rem;
+        color: #ffffff;
+        line-height: 1.2;
+      }
+      .videus-multiviewer-usecases .usecase-modern-content p {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 0;
+        color: #ffffff !important;
+      }
+      .videus-multiviewer-usecases .card-bg-1 { background-image: url('https://images.unsplash.com/photo-1598555301826-681dcce8aab2?auto=format&fit=crop&q=80&w=800'); }
+      .videus-multiviewer-usecases .card-bg-2 { background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800'); }
+      .videus-multiviewer-usecases .card-bg-3 { background-image: url('https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&q=80&w=800'); }
+      .videus-multiviewer-usecases .card-bg-4 { background-image: url('https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&q=80&w=800'); }
+      @media (max-width: 1024px) {
+        .videus-multiviewer-usecases .usecases-modern-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (max-width: 600px) {
+        .videus-multiviewer-usecases .usecases-modern-grid { grid-template-columns: 1fr; }
+      }
+    </style>
 
-                    <!-- Segundo grupo de logos (duplicado para scroll infinito) -->
-                    <img src="/wp-content/uploads/2024/01/eltrece-copy.png" alt="El Trece" class="client-logo">
-                    <img src="/wp-content/uploads/2023/12/Telecentro-gris-1.png" alt="Telecentro" class="client-logo">
-                    <img src="/wp-content/uploads/2023/12/encompass.png" alt="Encompass" class="client-logo">
-                    <img src="/wp-content/uploads/2024/01/multivision.png" alt="Multivision" class="client-logo">
-                    <img src="/wp-content/uploads/2025/08/America-TV-Peru.jpg" alt="America TV Peru" class="client-logo">
-                    <img src="/wp-content/uploads/2025/08/Artear_logo.jpeg" alt="Artear" class="client-logo">
-                    <img src="/wp-content/uploads/2025/08/claro-logo-01.jpg" alt="Claro" class="client-logo">
-                    <img src="/wp-content/uploads/2025/09/Televisa-logo-01.jpg" alt="Televisa" class="client-logo">
-                    <img src="/wp-content/uploads/2025/09/paramount-logo-01-01.jpg" alt="Paramount" class="client-logo">
-                    <img src="/wp-content/uploads/2025/09/tigo-logo-fondo-azul-01.jpg" alt="Tigo" class="client-logo">
-                    <img src="/wp-content/uploads/2025/09/canal-9-logo-01.jpg" alt="Canal 9" class="client-logo">
-                    <img src="/wp-content/uploads/2023/12/logos-clientes-02.png" alt="Cliente 2" class="client-logo">
-                    <img src="/wp-content/uploads/2023/12/logos-clientes-03.png" alt="Cliente 3" class="client-logo">
-                </div>
+    <section class="usecases-section videus-multiviewer-usecases" style="background-color: #f8fafc; padding: 60px 0;">
+      <div class="catalog-v2-container">
+        <h2 class="catalog-v2-section-title" style="text-align: center;">¿Para quién es ViDeus Multiviewer?</h2>
+        <p class="catalog-v2-section-subtitle" style="text-align: center; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">ViDeus Multiviewer se adapta a distintos flujos de trabajo para monitorear y analizar tus señales con la mayor densidad, calidad y confiabilidad operativa.</p>
+        
+        <div class="usecases-modern-grid">
+          <!-- Card 1 -->
+          <div class="usecase-modern-card card-bg-1">
+            <div class="usecase-modern-overlay"></div>
+            <div class="usecase-modern-content">
+              <span class="usecase-audience">Canales de TV (Broadcast)</span>
+              <h3>MONITOREO DE EMISIÓN</h3>
+              <p>Supervisá todas tus señales de aire, estudio y retorno en un solo lugar con métricas en tiempo real y alarmas visuales de QoS/QoE.</p>
             </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="usecase-modern-card card-bg-2">
+            <div class="usecase-modern-overlay"></div>
+            <div class="usecase-modern-content">
+              <span class="usecase-audience">Cableoperadores y Telcos</span>
+              <h3>CONTROL DE CABECERAS</h3>
+              <p>Alta densidad de PIPs para monitorear cientos de canales distribuidos, asegurando la calidad del servicio (SLA) para tus abonados.</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="usecase-modern-card card-bg-3">
+            <div class="usecase-modern-overlay"></div>
+            <div class="usecase-modern-content">
+              <span class="usecase-audience">Productoras y Móviles</span>
+              <h3>PRODUCCIÓN EN VIVO</h3>
+              <p>Creá mosaicos dinámicos on the fly (Drag & Drop) ideales para móviles de exteriores (OB Vans) y control rooms de estudios de producción.</p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="usecase-modern-card card-bg-4">
+            <div class="usecase-modern-overlay"></div>
+            <div class="usecase-modern-content">
+              <span class="usecase-audience">Streaming y OTT</span>
+              <h3>AUDITORÍA DIGITAL</h3>
+              <p>Validá el encoding y la entrega de tus streams HLS, DASH y RTMP, verificando perfiles y calidad de video para todas tus plataformas digitales.</p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
+
 
     <!-- CALL TO ACTION (BLANCO) -->
     <section class="catalog-v2-section" style="background-color: #ffffff !important;">
