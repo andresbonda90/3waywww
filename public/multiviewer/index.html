@@ -555,7 +555,7 @@ gtag("config", "GT-WBZNCSFL");
             </h1>
             <p style="color: #e2e8f0 !important; max-width: 800px; margin: 0 auto 30px auto; font-size: 1.1rem; line-height: 1.6; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">Monitoreá SDI, HDMI, IP y OTT en un único mosaico dinámico. Control 100% web, alarmas QoE/QoS automáticas y escalabilidad sin precedentes.</p>
             <div class="catalog-v2-hero-actions">
-                <a href="/empresa/#contacto" class="catalog-v2-btn-primary" style="box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;">SOLICITAR DEMO</a>
+                <a href="javascript:void(0)" onclick="openDemoModal('Multiviewer')" class="catalog-v2-btn-primary" style="box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;">SOLICITAR DEMO</a>
             </div>
         </div>
     </section>
@@ -1249,6 +1249,31 @@ var ElementorProFrontendConfig = {"ajaxurl":"\/wp-admin\/admin-ajax.php","nonce"
 <script id="elementor-pro-frontend-js" src="/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.35.1"></script>
 <script id="pro-elements-handlers-js" src="/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.35.1"></script>
 
+      <!-- Demo Modal -->
+      <div id="demoModal" class="demo-modal-overlay" style="display: none;">
+          <div class="demo-modal-container">
+              <button class="demo-modal-close" onclick="closeDemoModal()">&times;</button>
+              <h3 class="demo-modal-title">Solicitar Demo</h3>
+              <p class="demo-modal-subtitle">Completá tus datos y nos pondremos en contacto.</p>
+              <form id="demoForm" onsubmit="submitDemoForm(event)">
+                  <div class="demo-form-group">
+                      <label for="demoName">Nombre completo</label>
+                      <input type="text" id="demoName" required placeholder="Ej: Juan Pérez">
+                  </div>
+                  <div class="demo-form-group">
+                      <label for="demoEmail">Correo electrónico</label>
+                      <input type="email" id="demoEmail" required placeholder="tu@empresa.com">
+                  </div>
+                  <div class="demo-form-group demo-captcha-group">
+                      <label for="demoCaptcha" id="demoCaptchaLabel">¿Cuánto es X + Y?</label>
+                      <input type="number" id="demoCaptcha" required placeholder="Respuesta">
+                  </div>
+                  <button type="submit" class="catalog-v2-btn-primary" id="demoSubmitBtn" style="width: 100%; margin-top: 10px;">Enviar Solicitud</button>
+                  <p id="demoStatusMessage" class="demo-status-message"></p>
+              </form>
+          </div>
+      </div>
+      <script src="/catalog-modal.js"></script>
 </body>
 </html>
 
