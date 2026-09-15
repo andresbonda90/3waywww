@@ -2444,17 +2444,17 @@ html {
 
 .ai-capabilities-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    max-width: 1100px;
-    margin: 0 auto 40px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 30px;
 }
 
 .ai-capability-card {
     background: rgba(15, 23, 42, 0.7);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 12px;
-    padding: 40px 30px;
+    padding: 25px 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -2466,9 +2466,11 @@ html {
 
 .ai-card-top {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .ai-card-icon {
@@ -2499,12 +2501,13 @@ html {
 
 .tech-list {
     display: block;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     color: #00e5ff;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+    margin-bottom: 0;
+    text-align: center;
 }
 
 .ai-capability-card p {
@@ -2514,50 +2517,24 @@ html {
     margin: 0;
 }
 
-.ai-transversal-block {
-    max-width: 1100px;
-    margin: 0 auto 40px;
-    background: linear-gradient(90deg, rgba(79, 70, 229, 0.1) 0%, rgba(0, 229, 255, 0.1) 100%);
+.ai-processing-strip {
+    background: rgba(15, 23, 42, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    padding: 30px 40px;
+    border-radius: 8px;
+    padding: 20px;
     text-align: center;
-}
-
-.ai-transversal-block h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #ffffff;
-}
-
-.ai-transversal-block p {
-    font-size: 1.05rem;
-    color: #cbd5e1;
-    margin: 0;
-}
-
-.ai-processing-block {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    background: rgba(15, 23, 42, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 40px;
-    text-align: center;
 }
 
-.ai-processing-block h3 {
-    font-size: 1.8rem;
-    font-weight: 800;
-    margin-bottom: 15px;
-    color: #ffffff !important;
-}
-
-.ai-processing-block p {
-    font-size: 1.2rem;
-    color: #94a3b8;
+.ai-processing-strip p {
     margin: 0;
+    font-size: 1.15rem;
+    color: #cbd5e1;
+}
+
+.ai-processing-strip strong {
+    color: #ffffff;
 }
 
 .highlight-onpremise {
@@ -2566,7 +2543,12 @@ html {
     text-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+    .ai-capabilities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 576px) {
     .ai-capabilities-grid {
         grid-template-columns: 1fr;
     }
