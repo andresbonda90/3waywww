@@ -1671,6 +1671,33 @@ html {
     background: #ffffff;
 }
 
+.products-section-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.products-pre-title {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.products-section-header .section-title {
+    margin-bottom: 20px;
+}
+
+.products-subtitle {
+    font-size: 1.1rem;
+    color: #475569;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
 /* 5. IA */
 .home-ai {
     padding: 80px 0;
