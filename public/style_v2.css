@@ -2050,12 +2050,12 @@ html {
     display: flex;
     align-items: center;
     gap: 50px;
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 16px;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding-bottom: 80px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.home-product-row:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
 }
 .home-product-row.reverse {
     flex-direction: row-reverse;
