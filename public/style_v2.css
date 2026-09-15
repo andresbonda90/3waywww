@@ -1607,27 +1607,28 @@ html {
 
 .clients-track {
     display: flex;
-    width: calc(200px * 14);
-    animation: scroll 30s linear infinite;
+    width: max-content;
+    animation: scroll 33s linear infinite;
     align-items: center;
 }
 
 .clients-track .client-logo {
-    width: 150px;
-    margin: 0 25px;
+    width: 225px;
+    height: 100px;
+    margin: 0 20px;
     filter: grayscale(100%) opacity(0.7);
-    transition: filter 0.3s ease;
+    transition: filter 0.3s ease, transform 0.3s ease;
     object-fit: contain;
-    max-height: 50px;
 }
 
 .clients-track .client-logo:hover {
     filter: grayscale(0%) opacity(1);
+    transform: scale(1.15);
 }
 
 @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-200px * 7)); }
+    100% { transform: translateX(-50%); }
 }
 
 /* 3. Ecosistema */
@@ -1652,54 +1653,17 @@ html {
     line-height: 1.6;
 }
 
-.ecosystem-flow {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1000px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    gap: 15px;
-}
 
-.flow-step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    min-width: 100px;
-}
 
-.flow-icon {
-    width: 64px;
-    height: 64px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    color: #3b82f6;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.flow-step:hover .flow-icon {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
-}
 
-.flow-step span {
-    font-weight: 700;
-    font-size: 0.9rem;
-    color: #1e293b;
-    letter-spacing: 1px;
-}
 
-.flow-arrow {
-    color: #94a3b8;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
+
+.flow-step:hover 
+
+
+
+
 
 /* 4. Soluciones (Products) */
 .home-products {
@@ -1996,18 +1960,37 @@ html {
 
 .cta-buttons .btn-primary {
     background: white;
-    color: #4f46e5;
+    color: #4f46e5 !important;
 }
 
 .cta-buttons .btn-primary:hover {
     background: #f8fafc;
 }
 
+.cta-buttons .btn-secondary-dark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 36px;
+    background: transparent;
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.cta-buttons .btn-secondary-dark:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .home-hero h1 { font-size: 2.5rem; }
-    .ecosystem-flow { flex-direction: column; gap: 20px; }
-    .flow-arrow { transform: rotate(90deg); margin: 5px 0; }
+    
+    
     .home-ecosystem h2, .home-ai .ai-header h2, .home-tech h2, .home-industries h2, .home-cases h2, .home-about h2, .home-cta h2 {
         font-size: 2rem;
     }
@@ -2104,4 +2087,133 @@ html {
         text-align: center;
     }
     .home-product-content h3 { font-size: 2rem; }
+}
+
+/* NEW ECOSYSTEM RADIAL */
+.ecosystem-radial {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    margin: 60px auto;
+}
+
+.ecosystem-radial::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%; height: 65%;
+    border: 2px dashed rgba(59, 130, 246, 0.2);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.radial-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px rgba(30, 58, 138, 0.2);
+    z-index: 10;
+}
+
+.radial-center-title {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.radial-node {
+    position: absolute;
+    width: 200px;
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 5;
+}
+
+.radial-node:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.radial-node .node-icon {
+    color: #3b82f6;
+    margin-bottom: 12px;
+}
+
+.radial-node h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.radial-node p {
+    font-size: 0.85rem;
+    color: #475569;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Base Positioning */
+.node-top { top: 0; left: 50%; margin-left: -100px; }
+.node-bottom { bottom: 0; left: 50%; margin-left: -100px; }
+.node-top-right { top: 15%; right: 0; }
+.node-bottom-right { bottom: 15%; right: 0; }
+.node-top-left { top: 15%; left: 0; }
+.node-bottom-left { bottom: 15%; left: 0; }
+
+.ecosystem-closing {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-top: 50px;
+}
+
+@media (max-width: 992px) {
+    .ecosystem-radial {
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 40px auto;
+        padding: 0 15px;
+    }
+    .ecosystem-radial::before { display: none; }
+    
+    .radial-center {
+        position: static;
+        transform: none;
+        width: 100%;
+        height: auto;
+        padding: 25px 0;
+        border-radius: 12px;
+        grid-column: 1 / -1;
+        margin-bottom: 20px;
+    }
+    
+    .radial-node {
+        position: static;
+        width: 100%;
+        margin-left: 0;
+    }
+}
+@media (max-width: 576px) {
+    .ecosystem-radial { grid-template-columns: 1fr; }
 }

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es-AR">
 <head>
     <meta charset="UTF-8">
@@ -100,61 +100,102 @@
             <h3 class="clients-title">Tecnología utilizada por broadcasters y operadores de toda Latinoamérica</h3>
             <div class="clients-marquee">
                 <div class="clients-track">
-                    <img src="/wp-content/uploads/2024/01/eltrece-copy.png" alt="El Trece" class="client-logo">
-                    <img src="/wp-content/uploads/2023/12/Telecentro-gris-1.png" alt="Telecentro" class="client-logo">
-                    <img src="/wp-content/uploads/2025/08/America-TV-Peru.jpg" alt="America TV Peru" class="client-logo">
-                    <img src="/wp-content/uploads/2025/08/claro-logo-01.jpg" alt="Claro" class="client-logo">
-                    <img src="/wp-content/uploads/2025/09/Televisa-logo-01.jpg" alt="Televisa" class="client-logo">
-                    <img src="/wp-content/uploads/2025/09/paramount-logo-01-01.jpg" alt="Paramount" class="client-logo">
-                    <img src="/wp-content/uploads/2025/09/tigo-logo-fondo-azul-01.jpg" alt="Tigo" class="client-logo">
-                    <img src="/wp-content/uploads/2024/01/eltrece-copy.png" alt="El Trece" class="client-logo">
-                    <img src="/wp-content/uploads/2023/12/Telecentro-gris-1.png" alt="Telecentro" class="client-logo">
-                    <img src="/wp-content/uploads/2025/08/America-TV-Peru.jpg" alt="America TV Peru" class="client-logo">
-                    <img src="/wp-content/uploads/2025/08/claro-logo-01.jpg" alt="Claro" class="client-logo">
-                    <img src="/wp-content/uploads/2025/09/Televisa-logo-01.jpg" alt="Televisa" class="client-logo">
-                    <img src="/wp-content/uploads/2025/09/paramount-logo-01-01.jpg" alt="Paramount" class="client-logo">
-                    <img src="/wp-content/uploads/2025/09/tigo-logo-fondo-azul-01.jpg" alt="Tigo" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Cableoperador/YATEK.png" alt="YATEK" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Catalog/MUNICIPALIDAD DE GUAYAQUIL.png" alt="MUNICIPALIDAD DE GUAYAQUIL" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Cableoperador/ABE.png" alt="ABE" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Clipping/CRONICA.png" alt="CRONICA" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Clipping/C5N.png" alt="C5N" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Logging/EJES.png" alt="EJES" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Logging/CARABINEROS.png" alt="CARABINEROS" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Catalog/AMERICA TV.png" alt="AMERICA TV" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Clipping/ONE BASEBALL.png" alt="ONE BASEBALL" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Logging/ENCOMPASS.png" alt="ENCOMPASS" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Multiviewer/TELECOM.png" alt="TELECOM" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Clipping/RADIO MITRE.png" alt="RADIO MITRE" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Clipping/Copia de UN LITORAL.png" alt="Copia de UN LITORAL" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Logging/GRUPO IMAGEN.png" alt="GRUPO IMAGEN" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Logging/REUTERS.png" alt="REUTERS" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Clipping/SAGAI.png" alt="SAGAI" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Clipping/ANTEL.png" alt="ANTEL" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Logging/MEDIA PLAN.png" alt="MEDIA PLAN" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Clipping/EL DOCE.png" alt="EL DOCE" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Multiviewer/TELECENTRO.png" alt="TELECENTRO" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Logging/PIPOL.png" alt="PIPOL" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Clipping/Copia de Logos clientes_5.png" alt="Copia de Logos clientes_5" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Logging/CNTV.png" alt="CNTV" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Clipping/ARTEAR.png" alt="ARTEAR" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Cableoperador/BVC.png" alt="BVC" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Clipping/CANAL CAPITAL.png" alt="CANAL CAPITAL" class="client-logo">
+                    <img src="/wp-content/uploads/logos_clientes/Logging/DISNEY.png" alt="DISNEY" class="client-logo">
                 </div>
             </div>
         </div>
     </section>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const track = document.querySelector('.clients-track');
+    if (track) {
+        let logos = Array.from(track.children);
+        for (let i = logos.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [logos[i], logos[j]] = [logos[j], logos[i]];
+        }
+        track.innerHTML = '';
+        logos.forEach(logo => track.appendChild(logo));
+        logos.forEach(logo => track.appendChild(logo.cloneNode(true)));
+    }
+});
+</script>
 
-    <!-- 3. Ecosistema -->
+        <!-- 3. Ecosistema -->
     <section class="home-ecosystem">
         <div class="container">
-            <h2>Una plataforma. Todo el ciclo del contenido.</h2>
-            <p class="ecosystem-subtitle">Desde la señal en vivo hasta el archivo histórico, ViDeus integra monitoreo, grabación, análisis, búsqueda, publicación y archivo dentro de una misma arquitectura.</p>
-            <div class="ecosystem-flow">
-                <div class="flow-step">
-                    <div class="flow-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path><path d="M12 12v9"></path><path d="m8 17 4-4 4 4"></path></svg></div>
-                    <span>CAPTURAR</span>
+            <h2>Una arquitectura. Múltiples posibilidades.</h2>
+            <p class="ecosystem-subtitle">Cada operación es diferente. Las soluciones ViDeus pueden implementarse de forma independiente o integrarse entre sí según las necesidades de cada proyecto.</p>
+            
+            <div class="ecosystem-radial">
+                <div class="radial-center">
+                    <span class="radial-center-title">ViDeus</span>
                 </div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step">
-                    <div class="flow-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
-                    <span>MONITOREAR</span>
+                
+                <div class="radial-node node-top">
+                    <div class="node-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line><line x1="12" y1="3" x2="12" y2="17"></line><line x1="2" y1="10" x2="22" y2="10"></line></svg></div>
+                    <h4>MONITOREAR</h4>
+                    <p>Señales y servicios en tiempo real.</p>
                 </div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step">
-                    <div class="flow-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
-                    <span>ANALIZAR</span>
+                
+                <div class="radial-node node-top-right">
+                    <div class="node-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><circle cx="18" cy="8" r="2" fill="currentColor" stroke="none"></circle><line x1="2" y1="15" x2="22" y2="15"></line><line x1="7" y1="15" x2="7" y2="20"></line><line x1="12" y1="15" x2="12" y2="20"></line><line x1="17" y1="15" x2="17" y2="20"></line></svg></div>
+                    <h4>GRABAR</h4>
+                    <p>TV, radio, SDI, IP y OTT.</p>
                 </div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step">
-                    <div class="flow-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
-                    <span>ENCONTRAR</span>
+                
+                <div class="radial-node node-bottom-right">
+                    <div class="node-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><circle cx="8" cy="13" r="1.5" fill="currentColor" stroke="none"></circle><circle cx="16" cy="13" r="1.5" fill="currentColor" stroke="none"></circle><circle cx="12" cy="8" r="1.5" fill="currentColor" stroke="none"></circle><line x1="8" y1="13" x2="12" y2="8"></line><line x1="12" y1="8" x2="16" y2="13"></line><line x1="8" y1="13" x2="16" y2="13"></line></svg></div>
+                    <h4>ANALIZAR</h4>
+                    <p>Contenido, calidad, metadata e IA.</p>
                 </div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step">
-                    <div class="flow-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg></div>
-                    <span>PUBLICAR</span>
+                
+                <div class="radial-node node-bottom">
+                    <div class="node-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><circle cx="11" cy="11" r="3"></circle><line x1="13.12" y1="13.12" x2="17" y2="17"></line></svg></div>
+                    <h4>ENCONTRAR</h4>
+                    <p>Contenido en vivo e histórico.</p>
                 </div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step">
-                    <div class="flow-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg></div>
-                    <span>ARCHIVAR</span>
+                
+                <div class="radial-node node-bottom-left">
+                    <div class="node-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="16" height="14" rx="2" ry="2"></rect><polygon points="7 10 12 13 7 16 7 10"></polygon><path d="M12 13L21 4"></path><polyline points="15 4 21 4 21 10"></polyline></svg></div>
+                    <h4>PUBLICAR</h4>
+                    <p>Clips y contenido listo para utilizar.</p>
+                </div>
+                
+                <div class="radial-node node-top-left">
+                    <div class="node-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path><rect x="7" y="12" width="10" height="7" rx="1" ry="1" fill="white"></rect><polygon points="10 13.5 14 15.5 10 17.5 10 13.5"></polygon></svg></div>
+                    <h4>ARCHIVAR</h4>
+                    <p>Preservación y catalogación.</p>
                 </div>
             </div>
+
+            <p class="ecosystem-closing">Usalas por separado. Integralas cuando lo necesites.</p>
         </div>
     </section>
 
