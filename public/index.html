@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     
     <!-- Premium V2 CSS -->
-    <link rel="stylesheet" href="/style_v2.css">
+    <link rel="stylesheet" href="/style_v2.css?v=3">
     <link rel="alternate" hreflang="es" href="http://localhost:8080/" />
     <link rel="alternate" hreflang="en" href="http://localhost:8080/en/" />
 </head>
@@ -267,22 +267,69 @@ document.addEventListener("DOMContentLoaded", function() {
     <!-- 5. IA -->
     <section class="home-ai">
         <div class="container">
-            <div class="ai-header">
+            <div class="ai-header-new">
                 <h2>Inteligencia Artificial aplicada al contenido</h2>
-                <p>Modelos de IA integrados a la plataforma ViDeus para analizar automáticamente video, audio y metadata.</p>
-                <div class="ai-badge">Procesamiento On-Premise. Tus contenidos pueden permanecer dentro de tu propia infraestructura.</div>
+                <p>IA integrada a las soluciones ViDeus para entender automáticamente audio, video, texto y metadata.</p>
             </div>
-            <div class="ai-grid">
-                <div class="ai-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Speech to Text + diarización</div>
-                <div class="ai-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Reconocimiento facial</div>
-                <div class="ai-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Reconocimiento de logos</div>
-                <div class="ai-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Detección de objetos</div>
-                <div class="ai-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> LLM</div>
-                <div class="ai-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Segmentación editorial automática</div>
-                <div class="ai-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Fingerprint / Content Match</div>
-                <div class="ai-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> OCR</div>
-                <div class="ai-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Auto Highlights</div>
-                <div class="ai-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Moderación y clasificación de contenido</div>
+            
+            <div class="ai-capabilities-grid">
+                <!-- 1. Entender audio y texto -->
+                <div class="ai-capability-card">
+                    <div class="ai-card-top">
+                        <div class="ai-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l3-9 5 18 3-9h5"/></svg>
+                        </div>
+                        <h3>ENTENDER AUDIO Y TEXTO</h3>
+                    </div>
+                    <span class="tech-list">Speech to Text &middot; Diarización &middot; OCR</span>
+                    <p>Convierte audio, texto en pantalla y metadata en información estructurada y consultable.</p>
+                </div>
+                
+                <!-- 2. Reconocer lo que aparece -->
+                <div class="ai-capability-card">
+                    <div class="ai-card-top">
+                        <div class="ai-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2" ry="2"></rect><rect x="6" y="8" width="4" height="4"></rect><rect x="14" y="10" width="4" height="4"></rect><path d="M12 18v3"></path><path d="M8 21h8"></path></svg>
+                        </div>
+                        <h3>RECONOCER LO QUE APARECE</h3>
+                    </div>
+                    <span class="tech-list">Rostros &middot; Logos &middot; Objetos &middot; VLM</span>
+                    <p>Identifica automáticamente personas, marcas y elementos visuales dentro del contenido.</p>
+                </div>
+                
+                <!-- 3. Entender, clasificar y moderar -->
+                <div class="ai-capability-card">
+                    <div class="ai-card-top">
+                        <div class="ai-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="10" width="20" height="6" rx="1"></rect><path d="M8 10v6"></path><path d="M14 10v6"></path><path d="M11 6l1 2 1-2"></path><path d="M12 3v5"></path></svg>
+                        </div>
+                        <h3>ENTENDER, CLASIFICAR Y MODERAR</h3>
+                    </div>
+                    <span class="tech-list">Segmentación editorial &middot; Clasificación &middot; Detección de desnudez &middot; Moderación &middot; Auto Highlights</span>
+                    <p>Interpreta y clasifica automáticamente el contenido para detectar temas, segmentos, momentos relevantes y material sensible.</p>
+                </div>
+                
+                <!-- 4. Identificar y comparar -->
+                <div class="ai-capability-card">
+                    <div class="ai-card-top">
+                        <div class="ai-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="8" height="12" rx="1"></rect><rect x="14" y="6" width="8" height="12" rx="1"></rect><path d="M10 12h4"></path><path d="M12 10l2 2-2 2"></path></svg>
+                        </div>
+                        <h3>IDENTIFICAR Y COMPARAR</h3>
+                    </div>
+                    <span class="tech-list">Fingerprint &middot; Content Match</span>
+                    <p>Reconoce contenido conocido, repeticiones, comerciales y coincidencias entre señales y archivos.</p>
+                </div>
+            </div>
+            
+            <div class="ai-transversal-block">
+                <h3>LLM + modelos multimodales</h3>
+                <p>Modelos integrados transversalmente para interpretar, relacionar, resumir y enriquecer la información obtenida del contenido.</p>
+            </div>
+            
+            <div class="ai-processing-block">
+                <h3>IA donde están tus contenidos.</h3>
+                <p>Procesamiento <span class="highlight-onpremise">On-Premise</span>, Cloud o híbrido, según las necesidades de cada proyecto.</p>
             </div>
         </div>
     </section>

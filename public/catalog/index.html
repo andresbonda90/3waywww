@@ -474,7 +474,7 @@ gtag("config", "GT-WBZNCSFL");
 <link rel="apple-touch-icon" href="/wp-content/uploads/2019/01/cropped-lineas-del-logo-en-color.png?fit=180%2C180&#038;ssl=1" />
 <meta name="msapplication-TileImage" content="/wp-content/uploads/2019/01/cropped-lineas-del-logo-en-color.png?fit=270%2C270&#038;ssl=1" />
 <link rel="stylesheet" href="/premium-styles.css">
-<link rel="stylesheet" href="/style_v2.css">
+<link rel="stylesheet" href="/style_v2.css?v=3">
 </head>
 <body class="wp-singular page-template page-template-elementor_header_footer page page-id-12362 wp-custom-logo wp-theme-pena group-blog singular no-sidebar standard-menu elementor-default elementor-template-full-width elementor-kit-1944 elementor-page elementor-page-12362">
 		<!-- Google Tag Manager (noscript) snippet added by Site Kit -->
@@ -706,6 +706,96 @@ gtag("config", "GT-WBZNCSFL");
             </div>
         </div>
     </section>
+
+    <!-- Integración DaVinci -->
+    <section class="davinci-integration">
+        <div class="container">
+            <div class="davinci-header">
+                <span class="davinci-eyebrow">INTEGRACIÓN CON ISLAS DE EDICIÓN</span>
+                <h2><span style="color: #ffffff;">DE PREGUNTARLE AL ARCHIVO<br>A EDITARLO.</span> <span style="color: #00e5ff;">EN SEGUNDOS.</span></h2>
+                <p class="davinci-subtitle">Buscá con IA, seleccioná el material y envialo directamente a DaVinci Resolve.</p>
+            </div>
+            
+            <div class="davinci-flow">
+                <!-- Paso 1 -->
+                <div class="davinci-step davinci-anim-item">
+                    <div class="davinci-img-wrapper">
+                        <div class="davinci-glow"></div>
+                        <img src="/wp-content/uploads/davinci1.png" alt="Preguntá al archivo" class="davinci-img">
+                    </div>
+                    <div class="davinci-text">
+                        <span class="davinci-num">01</span>
+                        <h3>PREGUNTÁ AL ARCHIVO</h3>
+                        <p>Usá lenguaje natural para encontrar el contenido que necesitás.</p>
+                    </div>
+                </div>
+                
+                <!-- Flecha 1 -->
+                <div class="davinci-arrow davinci-anim-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg>
+                </div>
+                
+                <!-- Paso 2 -->
+                <div class="davinci-step davinci-anim-item">
+                    <div class="davinci-img-wrapper">
+                        <div class="davinci-glow"></div>
+                        <img src="/wp-content/uploads/davinci2.png" alt="Elegí qué material llevar" class="davinci-img">
+                    </div>
+                    <div class="davinci-text">
+                        <span class="davinci-num">02</span>
+                        <h3>ELEGÍ QUÉ MATERIAL LLEVAR</h3>
+                        <p>Seleccioná los fragmentos relevantes: 20 s, 60 s o contenido completo.</p>
+                    </div>
+                </div>
+                
+                <!-- Flecha 2 -->
+                <div class="davinci-arrow davinci-anim-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg>
+                </div>
+                
+                <!-- Paso 3 -->
+                <div class="davinci-step davinci-anim-item">
+                    <div class="davinci-img-wrapper">
+                        <div class="davinci-glow"></div>
+                        <img src="/wp-content/uploads/davinci3.png" alt="Editá en DaVinci Resolve" class="davinci-img">
+                    </div>
+                    <div class="davinci-text">
+                        <span class="davinci-num">03</span>
+                        <h3>EDITÁ EN DAVINCI RESOLVE</h3>
+                        <p>El contenido aparece directamente en tu Media Pool, listo para usar.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="davinci-footer davinci-anim-item">
+                <h3>BUSCAR. ENCONTRAR. EDITAR.</h3>
+                <p>ViDeus Catalog conecta la inteligencia del archivo con el flujo real de producción.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const items = entry.target.querySelectorAll('.davinci-anim-item');
+                        items.forEach((item, index) => {
+                            setTimeout(() => {
+                                item.classList.add('active');
+                            }, index * 300);
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+            
+            const section = document.querySelector('.davinci-integration');
+            if (section) {
+                observer.observe(section);
+            }
+        });
+    </script>
 
     <!-- Demo Modal -->
     <div id="demoModal" class="demo-modal-overlay" style="display: none;">

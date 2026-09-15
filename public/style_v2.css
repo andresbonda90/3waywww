@@ -2244,3 +2244,330 @@ html {
 @media (max-width: 576px) {
     .ecosystem-radial { grid-template-columns: 1fr; }
 }
+
+/* =========================================
+   CATALOG V2 - DAVINCI RESOLVE INTEGRATION
+   ========================================= */
+.davinci-integration {
+    background-color: #04111C;
+    color: #ffffff;
+    padding: 100px 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.davinci-header {
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.davinci-eyebrow {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #00e5ff;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.davinci-header h2 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.davinci-subtitle {
+    font-size: 1.2rem;
+    color: #e2e8f0 !important;
+}
+
+.davinci-flow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    gap: 20px;
+}
+
+.davinci-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    max-width: 300px;
+}
+
+.davinci-img-wrapper {
+    position: relative;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.davinci-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(0,229,255,0.15) 0%, rgba(0,0,0,0) 70%);
+    z-index: 1;
+}
+
+.davinci-img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+    object-fit: contain;
+}
+
+.davinci-text {
+    text-align: center;
+}
+
+.davinci-num {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #00e5ff;
+    margin-bottom: 10px;
+}
+
+.davinci-step h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.davinci-step p {
+    font-size: 0.95rem;
+    color: #e2e8f0 !important;
+    line-height: 1.5;
+}
+
+.davinci-arrow {
+    flex: 0 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.davinci-arrow svg {
+    width: 40px;
+    height: 40px;
+    color: #00e5ff;
+    filter: drop-shadow(0 0 8px rgba(0,229,255,0.6));
+}
+
+.davinci-footer {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.davinci-footer h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.davinci-footer p {
+    font-size: 1rem;
+    color: #e2e8f0 !important;
+}
+
+/* Animations */
+.davinci-anim-item {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.davinci-anim-item.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .davinci-flow {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    
+    .davinci-arrow {
+        transform: rotate(90deg);
+        margin: 10px 0;
+    }
+    
+    .davinci-header h2 {
+        font-size: 2.2rem;
+    }
+}
+
+/* =========================================
+   HOME - AI SECTION REFACTOR
+   ========================================= */
+.home-ai {
+    background-color: #0b1121 !important; /* deep dark background */
+    padding: 60px 20px !important;
+    color: #ffffff !important;
+}
+
+.ai-header-new {
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ai-header-new h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #ffffff !important;
+}
+
+.ai-header-new p {
+    font-size: 1.15rem;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+.ai-capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+}
+
+.ai-capability-card {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 40px 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ai-capability-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(0, 229, 255, 0.2);
+}
+
+.ai-card-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.ai-card-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0;
+    background: rgba(0, 229, 255, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    flex-shrink: 0;
+}
+
+.ai-card-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.ai-capability-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    letter-spacing: 0.5px;
+    color: #ffffff !important;
+}
+
+.tech-list {
+    display: block;
+    font-size: 0.85rem;
+    color: #00e5ff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.ai-capability-card p {
+    font-size: 1rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.ai-transversal-block {
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    background: linear-gradient(90deg, rgba(79, 70, 229, 0.1) 0%, rgba(0, 229, 255, 0.1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 30px 40px;
+    text-align: center;
+}
+
+.ai-transversal-block h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.ai-transversal-block p {
+    font-size: 1.05rem;
+    color: #cbd5e1;
+    margin: 0;
+}
+
+.ai-processing-block {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+}
+
+.ai-processing-block h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #ffffff !important;
+}
+
+.ai-processing-block p {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.highlight-onpremise {
+    color: #00e5ff;
+    font-weight: 800;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+    .ai-capabilities-grid {
+        grid-template-columns: 1fr;
+    }
+}
